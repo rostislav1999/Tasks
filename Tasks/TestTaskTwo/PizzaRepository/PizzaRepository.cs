@@ -1,6 +1,6 @@
+using PizzaApp.Models;
 using System;
 using System.Collections.Generic;
-using PizzaApp.Models; // Подключаем пространство имен с моделью пиццы
 
 namespace PizzaApp.Repositories
 {
@@ -48,6 +48,12 @@ namespace PizzaApp.Repositories
         public PizzaModel GetPizzaByName(string name)
         {
             return pizzas.Find(pizza => pizza.Name.Equals(name, StringComparison.OrdinalIgnoreCase));
+        }
+
+        // Метод для получения списка всех пицц (возвращение константного поля)
+        public List<PizzaModel> GetAllPizzasStatic()
+        {
+            return pizzas;
         }
     }
 }
