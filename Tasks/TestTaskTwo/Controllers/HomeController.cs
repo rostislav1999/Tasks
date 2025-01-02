@@ -4,11 +4,11 @@ using TestTaskTwo.Models;
 
 namespace TestTaskTwo.Controllers
 {
-    public class HomeController : Controller
+    public class PizzaRepository : Controller
     {
-        private readonly ILogger<HomeController> _logger;
+        private readonly ILogger<PizzaRepository> _logger;
 
-        public HomeController(ILogger<HomeController> logger)
+        public PizzaRepository(ILogger<PizzaRepository> logger)
         {
             _logger = logger;
         }
