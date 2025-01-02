@@ -2,52 +2,27 @@ using System;
 using System.Collections.Generic;
 using PizzaApp.Models; // Подключаем пространство имен с моделью пиццы
 
-namespace PizzaApp.Repositories
+namespace PizzaApp.Models
 {
-    public class PizzaRepository
+    public class PizzaModel
     {
-        // Константный список пицц
-        private static readonly List<PizzaModel> pizzas = new List<PizzaModel>()
-        {
-            new PizzaModel(
-                name: "Маргарита",
-                image: "images/margherita.jpg",
-                composition: new List<string>{ "Томатный соус", "Моцарелла", "Базилик" },
-                sizes: new List<string>{ "Маленькая", "Средняя", "Большая" },
-                crust: "Тонкое тесто",
-                price: 350m,
-                weight: "450g"
-            ),
-            new PizzaModel(
-                name: "Пепперони",
-                image: "images/pepperoni.jpg",
-                composition: new List<string>{ "Томатный соус", "Моцарелла", "Пепперони" },
-                sizes: new List<string>{ "Средняя", "Большая" },
-                crust: "Толстое тесто",
-                price: 400m,
-                weight: "500g"
-            ),
-            new PizzaModel(
-                name: "Гавайская",
-                image: "images/hawaiian.jpg",
-                composition: new List<string>{ "Томатный соус", "Моцарелла", "Гавайский микс" },
-                sizes: new List<string>{ "Маленькая", "Средняя" },
-                crust: "Тонкое тесто",
-                price: 420m,
-                weight: "460g"
-            )
-        };
+        public string Name { get; set; }
+        public string Image { get; set; }
+        public List<string> Composition { get; set; }
+        public List<string> Sizes { get; set; }
+        public string Crust { get; set; }
+        public decimal Price { get; set; }
+        public string Weight { get; set; }
 
-        // Метод для получения списка всех пицц
-        public List<PizzaModel> GetAllPizzas()
+        public PizzaModel(string name, string image, List<string> composition, List<string> sizes, string crust, decimal price, string weight)
         {
-            return pizzas;
-        }
-
-        // Метод для поиска пиццы по названию
-        public PizzaModel GetPizzaByName(string name)
-        {
-            return pizzas.Find(pizza => pizza.Name.Equals(name, StringComparison.OrdinalIgnoreCase));
+            Name = name;
+            Image = image;
+            Composition = composition;
+            Sizes = sizes;
+            Crust = crust;
+            Price = price;
+            Weight = weight;
         }
     }
 }

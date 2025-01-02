@@ -1,33 +1,27 @@
 using Microsoft.AspNetCore.Mvc;
-using PizzaApp.Repositories;
+using PizzaApp.Repositories;  // Подключаем репозиторий
+using PizzaApp.Models;
 
 namespace PizzaApp.Controllers
 {
-    [Route("api/[controller]")]
-    [ApiController]
-    public class PizzaController : ControllerBase
+    public class PizzaController : Controller
     {
         private readonly PizzaRepository _pizzaRepository;
 
+        // Конструктор с внедрением зависимостей
         public PizzaController()
         {
-            _pizzaRepository = new PizzaRepository(); // Инициализируем репозиторий
+            _pizzaRepository = new PizzaRepository();  // Можно внедрить через DI контейнер, если требуется
         }
 
-        [HttpGet]
-        public IActionResult GetPizzas()
+        // Метод Index
+        public IActionResult Index()
         {
+            // Получаем список всех пицц из репозитория
             var pizzas = _pizzaRepository.GetAllPizzas();
-            return Ok(pizzas);
-        }
 
-        [HttpGet("{name}")]
-        public IActionResult GetPizzaByName(string name)
-        {
-            var pizza = _pizzaRepository.GetPizzaByName(name);
-            if (pizza == null)
-                return NotFound("Pizza not found");
-            return Ok(pizza);
+            // Передаем список пицц в представление
+            return View(pizzas);
         }
     }
 }
