@@ -1,5 +1,5 @@
 using Microsoft.AspNetCore.Mvc;
-using PizzaApp.Repositories;  // Подключаем репозиторий
+using PizzaApp.Repositories;
 using PizzaApp.Models;
 
 namespace PizzaApp.Controllers
@@ -8,20 +8,15 @@ namespace PizzaApp.Controllers
     {
         private readonly PizzaRepository _pizzaRepository;
 
-        // Конструктор с внедрением зависимостей
         public PizzaController()
         {
-            _pizzaRepository = new PizzaRepository();  // Можно внедрить через DI контейнер, если требуется
+            _pizzaRepository = new PizzaRepository();
         }
 
-        // Метод Index
         public IActionResult Index()
         {
-            // Получаем список всех пицц из репозитория
-            var pizzas = _pizzaRepository.GetAllPizzas();
-
-            // Передаем список пицц в представление
-            return View(pizzas);
+            var pizzas = _pizzaRepository.GetAllPizzas(); // Получаем список пицц
+            return View(pizzas); // Передаем в представление
         }
     }
 }

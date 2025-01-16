@@ -1,22 +1,80 @@
-html {
-  font-size: 14px;
-}
-
-@media (min-width: 768px) {
-  html {
-    font-size: 16px;
-  }
-}
-
-.btn:focus, .btn:active:focus, .btn-link.nav-link:focus, .form-control:focus, .form-check-input:focus {
-  box-shadow: 0 0 0 0.1rem white, 0 0 0 0.25rem #258cfb;
-}
-
-html {
-  position: relative;
-  min-height: 100%;
-}
-
+/* Общие стили */
 body {
-  margin-bottom: 60px;
+    font-family: Arial, sans-serif;
+    margin: 0;
+    padding: 0;
+    background-color: #fff;
+    color: #333;
+}
+
+h1, h2 {
+    margin: 0;
+}
+
+p {
+    margin: 5px 0;
+}
+
+/* Header */
+header {
+    background-color: #f8f8f8;
+    padding: 20px;
+    text-align: center;
+    border-bottom: 1px solid #eaeaea;
+}
+
+.working-hours {
+    font-size: 10px;
+    color: #555;
+}
+
+/* Categories */
+.categories {
+    text-align: center;
+    padding: 8px;
+    background-color: #f2f2f2;
+    font-weight: bold;
+}
+
+/* Menu */
+.menu {
+    padding: 20px;
+}
+
+.menu-flex {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 20px;
+}
+
+.menu-item {
+    flex: 1 1 calc(25% - 20px);
+    padding: 10px;
+    border: 1px solid #e0e0e0;
+    border-radius: 5px;
+    background-color: #fff;
+    text-align: center;
+    box-sizing: border-box;
+}
+
+    .menu-item h2 {
+        font-size: 16px;
+    }
+
+    .menu-item p {
+        font-size: 12px;
+    }
+
+img {
+    width: 100%;
+    max-width: 300px;
+    height: auto;
+}
+
+/* Footer */
+footer {
+    background-color: #f8f8f8;
+    padding: 8px;
+    text-align: center;
+    border-top: 1px solid #eaeaea;
 }

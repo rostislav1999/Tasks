@@ -1,21 +1,27 @@
 using System.Diagnostics;
 using Microsoft.AspNetCore.Mvc;
+using Microsoft.Extensions.Logging;
+using PizzaApp.Repositories;
 using TestTaskTwo.Models;
 
 namespace TestTaskTwo.Controllers
 {
-    public class PizzaRepository : Controller
+    public class HomeController : Controller
     {
-        private readonly ILogger<PizzaRepository> _logger;
+        private readonly ILogger<HomeController> _logger;
+        private readonly PizzaRepository _pizzaRepository;
 
-        public PizzaRepository(ILogger<PizzaRepository> logger)
+        public HomeController(ILogger<HomeController> logger)
         {
             _logger = logger;
+            _pizzaRepository = new PizzaRepository();
         }
 
         public IActionResult Index()
         {
-            return View();
+            var pizzas = _pizzaRepository.GetAllPizzas();
+
+            return View(pizzas);
         }
 
         public IActionResult Privacy()
@@ -30,3 +36,13 @@ namespace TestTaskTwo.Controllers
         }
     }
 }
+
+
+
+
+
+
+
+
+
+
