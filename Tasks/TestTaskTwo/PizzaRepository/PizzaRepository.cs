@@ -10,7 +10,7 @@ namespace PizzaApp.Repositories
         private static readonly List<PizzaModel> pizzas = new List<PizzaModel>()
         {
 new PizzaModel(
-    name: "Новогодняя",
+    name: "Нового222222222дняя",
     image: "../img/novogodnyaya_2s.jpg",
     composition: new List<string>{ "Соус \"Гавайский\"", "Сыр моцарелла", "Куриная грудка", "Мандарины консервированные", "Стружка миндаля", "Кокосовая стружка" },
     sizes: new List<string>{ "30 см", "40 см", "60 см" },

@@ -23,8 +23,12 @@ app.UseRouting();
 
 app.UseAuthorization();
 
+// Map API controllers
+app.MapControllers();
+
 app.MapControllerRoute(
     name: "default",
     pattern: "{controller=Home}/{action=Index}/{id?}");
-builder.Logging.AddConsole();//логи 
+
+builder.Logging.AddConsole(); // Логи
 app.Run();

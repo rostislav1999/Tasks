@@ -1,6 +1,6 @@
 {
   "Version": 1,
-  "Hash": "S7Er37tctCVEw508FIkloTpt+x5qe5dr34US8tnc/Dw=",
+  "Hash": "a7HHvAsHW4ddtZpmFz56acBssU0QMleerXNwuI7XzrA=",
   "Source": "TestTaskTwo",
   "BasePath": "_content/TestTaskTwo",
   "Mode": "Default",
@@ -939,27 +939,6 @@
       "CopyToOutputDirectory": "Never",
       "CopyToPublishDirectory": "PreserveNewest",
       "OriginalItemSpec": "wwwroot\\js\\index.js"
-    },
-    {
-      "Identity": "C:\\Users\\vladz\\OneDrive\\Documentos\\Project\\Tasks\\TestTaskTwo\\wwwroot\\js\\newFile.js",
-      "SourceId": "TestTaskTwo",
-      "SourceType": "Discovered",
-      "ContentRoot": "C:\\Users\\vladz\\OneDrive\\Documentos\\Project\\Tasks\\TestTaskTwo\\wwwroot\\",
-      "BasePath": "_content/TestTaskTwo",
-      "RelativePath": "js/newFile#[.{fingerprint}]?.js",
-      "AssetKind": "All",
-      "AssetMode": "All",
-      "AssetRole": "Primary",
-      "AssetMergeBehavior": "",
-      "AssetMergeSource": "",
-      "RelatedAsset": "",
-      "AssetTraitName": "",
-      "AssetTraitValue": "",
-      "Fingerprint": "ehqtlu0tb3",
-      "Integrity": "UthywZzXmRF0IqgV2I4Rmc9lekml7m+loyIa4AsJyFs=",
-      "CopyToOutputDirectory": "Never",
-      "CopyToPublishDirectory": "PreserveNewest",
-      "OriginalItemSpec": "wwwroot\\js\\newFile.js"
     },
     {
       "Identity": "C:\\Users\\vladz\\OneDrive\\Documentos\\Project\\Tasks\\TestTaskTwo\\wwwroot\\js\\package.json",
@@ -5664,88 +5643,6 @@
         {
           "Name": "integrity",
           "Value": "sha256-xPO9F5NZLd8+cNU2++zXpw7c0oxoW/3V+cvgLYypIz8="
-        }
-      ]
-    },
-    {
-      "Route": "js/newFile.ehqtlu0tb3.js",
-      "AssetFile": "C:\\Users\\vladz\\OneDrive\\Documentos\\Project\\Tasks\\TestTaskTwo\\wwwroot\\js\\newFile.js",
-      "Selectors": [],
-      "ResponseHeaders": [
-        {
-          "Name": "Accept-Ranges",
-          "Value": "bytes"
-        },
-        {
-          "Name": "Content-Length",
-          "Value": "745"
-        },
-        {
-          "Name": "Content-Type",
-          "Value": "text/javascript"
-        },
-        {
-          "Name": "ETag",
-          "Value": "\"UthywZzXmRF0IqgV2I4Rmc9lekml7m+loyIa4AsJyFs=\""
-        },
-        {
-          "Name": "Last-Modified",
-          "Value": "Fri, 17 Jan 2025 00:34:07 GMT"
-        },
-        {
-          "Name": "Cache-Control",
-          "Value": "max-age=31536000, immutable"
-        }
-      ],
-      "EndpointProperties": [
-        {
-          "Name": "fingerprint",
-          "Value": "ehqtlu0tb3"
-        },
-        {
-          "Name": "label",
-          "Value": "js/newFile.js"
-        },
-        {
-          "Name": "integrity",
-          "Value": "sha256-UthywZzXmRF0IqgV2I4Rmc9lekml7m+loyIa4AsJyFs="
-        }
-      ]
-    },
-    {
-      "Route": "js/newFile.js",
-      "AssetFile": "C:\\Users\\vladz\\OneDrive\\Documentos\\Project\\Tasks\\TestTaskTwo\\wwwroot\\js\\newFile.js",
-      "Selectors": [],
-      "ResponseHeaders": [
-        {
-          "Name": "Accept-Ranges",
-          "Value": "bytes"
-        },
-        {
-          "Name": "Content-Length",
-          "Value": "745"
-        },
-        {
-          "Name": "Content-Type",
-          "Value": "text/javascript"
-        },
-        {
-          "Name": "ETag",
-          "Value": "\"UthywZzXmRF0IqgV2I4Rmc9lekml7m+loyIa4AsJyFs=\""
-        },
-        {
-          "Name": "Last-Modified",
-          "Value": "Fri, 17 Jan 2025 00:34:07 GMT"
-        },
-        {
-          "Name": "Cache-Control",
-          "Value": "no-cache"
-        }
-      ],
-      "EndpointProperties": [
-        {
-          "Name": "integrity",
-          "Value": "sha256-UthywZzXmRF0IqgV2I4Rmc9lekml7m+loyIa4AsJyFs="
         }
       ]
     },

@@ -40,7 +40,6 @@ wwwroot\img\solanka_2s.jpg
 wwwroot\img\tatarskaya_2s.jpg
 wwwroot\img\xxxl_2s.jpg
 wwwroot\js\index.js
-wwwroot\js\newFile.js
 wwwroot\js\package.json
 wwwroot\js\package-lock.json
 wwwroot\js\site.js

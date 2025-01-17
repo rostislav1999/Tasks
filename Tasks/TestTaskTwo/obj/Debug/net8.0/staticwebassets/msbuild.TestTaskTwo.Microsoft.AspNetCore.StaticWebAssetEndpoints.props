@@ -504,18 +504,6 @@
       <EndpointProperties><![CDATA[[{"Name":"fingerprint","Value":"k89wd0h7qn"},{"Name":"integrity","Value":"sha256-xPO9F5NZLd8\u002BcNU2\u002B\u002BzXpw7c0oxoW/3V\u002BcvgLYypIz8="},{"Name":"label","Value":"_content/TestTaskTwo/js/index.js"}]]]></EndpointProperties>
       <ResponseHeaders><![CDATA[[{"Name":"Accept-Ranges","Value":"bytes"},{"Name":"Cache-Control","Value":"max-age=31536000, immutable"},{"Name":"Content-Length","Value":"1927"},{"Name":"Content-Type","Value":"text/javascript"},{"Name":"ETag","Value":"\u0022xPO9F5NZLd8\u002BcNU2\u002B\u002BzXpw7c0oxoW/3V\u002BcvgLYypIz8=\u0022"},{"Name":"Last-Modified","Value":"Fri, 17 Jan 2025 00:14:31 GMT"}]]]></ResponseHeaders>
     </StaticWebAssetEndpoint>
-    <StaticWebAssetEndpoint Include="_content/TestTaskTwo/js/newFile.ehqtlu0tb3.js">
-      <AssetFile>$([System.IO.Path]::GetFullPath('$(MSBuildThisFileDirectory)..\staticwebassets\js\newFile.js'))</AssetFile>
-      <Selectors><![CDATA[[]]]></Selectors>
-      <EndpointProperties><![CDATA[[{"Name":"fingerprint","Value":"ehqtlu0tb3"},{"Name":"integrity","Value":"sha256-UthywZzXmRF0IqgV2I4Rmc9lekml7m\u002BloyIa4AsJyFs="},{"Name":"label","Value":"_content/TestTaskTwo/js/newFile.js"}]]]></EndpointProperties>
-      <ResponseHeaders><![CDATA[[{"Name":"Accept-Ranges","Value":"bytes"},{"Name":"Cache-Control","Value":"max-age=31536000, immutable"},{"Name":"Content-Length","Value":"745"},{"Name":"Content-Type","Value":"text/javascript"},{"Name":"ETag","Value":"\u0022UthywZzXmRF0IqgV2I4Rmc9lekml7m\u002BloyIa4AsJyFs=\u0022"},{"Name":"Last-Modified","Value":"Fri, 17 Jan 2025 00:34:07 GMT"}]]]></ResponseHeaders>
-    </StaticWebAssetEndpoint>
-    <StaticWebAssetEndpoint Include="_content/TestTaskTwo/js/newFile.js">
-      <AssetFile>$([System.IO.Path]::GetFullPath('$(MSBuildThisFileDirectory)..\staticwebassets\js\newFile.js'))</AssetFile>
-      <Selectors><![CDATA[[]]]></Selectors>
-      <EndpointProperties><![CDATA[[{"Name":"integrity","Value":"sha256-UthywZzXmRF0IqgV2I4Rmc9lekml7m\u002BloyIa4AsJyFs="}]]]></EndpointProperties>
-      <ResponseHeaders><![CDATA[[{"Name":"Accept-Ranges","Value":"bytes"},{"Name":"Cache-Control","Value":"no-cache"},{"Name":"Content-Length","Value":"745"},{"Name":"Content-Type","Value":"text/javascript"},{"Name":"ETag","Value":"\u0022UthywZzXmRF0IqgV2I4Rmc9lekml7m\u002BloyIa4AsJyFs=\u0022"},{"Name":"Last-Modified","Value":"Fri, 17 Jan 2025 00:34:07 GMT"}]]]></ResponseHeaders>
-    </StaticWebAssetEndpoint>
     <StaticWebAssetEndpoint Include="_content/TestTaskTwo/js/package-lock.json">
       <AssetFile>$([System.IO.Path]::GetFullPath('$(MSBuildThisFileDirectory)..\staticwebassets\js\package-lock.json'))</AssetFile>
       <Selectors><![CDATA[[]]]></Selectors>

@@ -173,10 +173,6 @@
       "PackagePath": "staticwebassets\\js\\index.js"
     },
     {
-      "Id": "C:\\Users\\vladz\\OneDrive\\Documentos\\Project\\Tasks\\TestTaskTwo\\wwwroot\\js\\newFile.js",
-      "PackagePath": "staticwebassets\\js\\newFile.js"
-    },
-    {
       "Id": "C:\\Users\\vladz\\OneDrive\\Documentos\\Project\\Tasks\\TestTaskTwo\\wwwroot\\js\\package-lock.json",
       "PackagePath": "staticwebassets\\js\\package-lock.json"
     },

@@ -44,7 +44,12 @@
                 data.forEach(function(pizza) {
                     console.log(pizza);  // Печатаем каждый объект pizza
                     pizzasList.append(
-                        '<li>' + pizza.Name + ' - ' + pizza.Price + ' руб.</li>'
+                                         `<img src="${pizza.image}" alt="${pizza.name}" />
+                            <h2>${pizza.name}</h2>
+                            <p>Состав: ${pizza.composition.join(", ")}</p>
+                            <p>Размеры: ${pizza.sizes.join(", ")}</p>
+                            <p>Корочка: ${pizza.crust}</p>
+                            <p class="price">${pizza.price} Р ${pizza.weight}</p>`
                     );
                 });
             },

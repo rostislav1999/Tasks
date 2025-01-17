@@ -1,22 +1,24 @@
 using Microsoft.AspNetCore.Mvc;
-using System.Collections.Generic;
+using PizzaApp.Repositories;
 
 namespace PizzaApp.Controllers
 {
-    [Route("api/[controller]")]
     [ApiController]
+    [Route("api/[controller]")]
     public class PizzaController : ControllerBase
     {
+        private readonly PizzaRepository _pizzaRepository;
+
+        public PizzaController(PizzaRepository pizzaRepository)
+        {
+            _pizzaRepository = pizzaRepository;
+        }
+
+        // Метод для получения списка пицц в формате JSON
         [HttpGet]
         public IActionResult GetPizzas()
         {
-            var pizzas = new List<object>
-            {
-                new { Id = 1, Name = "Маргарита", Price = 500 },
-                new { Id = 2, Name = "Пепперони", Price = 600 },
-                new { Id = 3, Name = "Гавайская", Price = 550 }
-            };
-
+            var pizzas = _pizzaRepository.GetAllPizzas();
             return Ok(pizzas); // Возвращаем список пицц в формате JSON
         }
     }
