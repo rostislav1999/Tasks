@@ -1,8 +1,9 @@
 using Microsoft.AspNetCore.Mvc;
-using PizzaApp.Repositories; // Репозиторий для работы с данными о пиццах
-using TestTaskTwo.Models; // Модель для пиццы
+using PizzaApp.PizzaRepositories;
+using TestTaskTwo.Models;
 using System.Collections.Generic;
 using System.Diagnostics;
+using PizzaApp;
 
 namespace TestTaskTwo.Controllers
 {
@@ -11,24 +12,25 @@ namespace TestTaskTwo.Controllers
         private readonly ILogger<HomeController> _logger;
         private readonly PizzaRepository _pizzaRepository;
 
+        // Конструктор контроллера
         public HomeController(ILogger<HomeController> logger)
         {
             _logger = logger;
-            _pizzaRepository = new PizzaRepository(); // Создаем экземпляр репозитория
+            _pizzaRepository = new PizzaRepository();
         }
 
-        // Главная страница, передаем данные на представление
+        // Метод для отображения главной страницы с пиццами
         public IActionResult Index()
         {
-            var pizzas = _pizzaRepository.GetAllPizzas(); // Получаем пиццы
-            return View(pizzas); // Отправляем пиццы в представление
+            var pizzas = _pizzaRepository.GetAllPizzas(); // Исправлено название метода
+            return View(pizzas);
         }
 
-        // Новый метод для получения пицц через API в формате JSON
+        // Метод для получения списка пицц в формате JSON
         public IActionResult GetPizzas()
         {
-            var pizzas = _pizzaRepository.GetAllPizzas(); // Получаем пиццы
-            return Json(pizzas); // Возвращаем данные в формате JSON
+            var pizzas = _pizzaRepository.GetAllPizzas(); // Исправлено название метода
+            return Json(pizzas);
         }
 
         // Страница Privacy

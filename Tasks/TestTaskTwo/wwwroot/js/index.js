@@ -5,7 +5,7 @@ const port = 7052;
 // Для обслуживания статических файлов (например, картинки и CSS)
 app.use(express.static('public'));
 
-// Маршрут для получения списка пицц
+
 app.get('/getPizzas', function (req, res) {
     const pizzas = [
         {
@@ -43,11 +43,10 @@ app.get('/getPizzas', function (req, res) {
         }
     ];
 
-    // Отправляем список пицц в формате JSON
+
     res.json(pizzas);
 });
 
-// Запуск сервера
 app.listen(port, () => {
     console.log(`Сервер работает на http://localhost:${port}`);
 });

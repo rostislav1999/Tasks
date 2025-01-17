@@ -1,12 +1,1 @@
-[
-  {
-    "ContainingType": "PizzaApp.Controllers.PizzaController",
-    "Method": "GetPizzas",
-    "RelativePath": "api/Pizza",
-    "HttpMethod": "GET",
-    "IsController": true,
-    "Order": 0,
-    "Parameters": [],
-    "ReturnTypes": []
-  }
-]
+[]

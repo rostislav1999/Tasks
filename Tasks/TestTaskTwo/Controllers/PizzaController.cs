@@ -1,11 +1,10 @@
 using Microsoft.AspNetCore.Mvc;
-using PizzaApp.Repositories;
+using PizzaApp.PizzaRepositories;
+using PizzaApp.Models;
 
 namespace PizzaApp.Controllers
 {
-    [ApiController]
-    [Route("api/[controller]")]
-    public class PizzaController : ControllerBase
+    public class PizzaController : Controller
     {
         private readonly PizzaRepository _pizzaRepository;
 
@@ -14,12 +13,10 @@ namespace PizzaApp.Controllers
             _pizzaRepository = pizzaRepository;
         }
 
-        // Метод для получения списка пицц в формате JSON
-        [HttpGet]
-        public IActionResult GetPizzas()
+        public IActionResult Index()
         {
-            var pizzas = _pizzaRepository.GetAllPizzas();
-            return Ok(pizzas); // Возвращаем список пицц в формате JSON
+            var pizzas = _pizzaRepository.GetAllPizzas();  
+            return View("~/Views/Home/Index.cshtml", pizzas); 
         }
     }
 }
