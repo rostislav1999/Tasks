@@ -169,6 +169,22 @@
       "PackagePath": "staticwebassets\\img\\xxxl_2s.jpg"
     },
     {
+      "Id": "C:\\Users\\vladz\\OneDrive\\Documentos\\Project\\Tasks\\TestTaskTwo\\wwwroot\\js\\index.js",
+      "PackagePath": "staticwebassets\\js\\index.js"
+    },
+    {
+      "Id": "C:\\Users\\vladz\\OneDrive\\Documentos\\Project\\Tasks\\TestTaskTwo\\wwwroot\\js\\newFile.js",
+      "PackagePath": "staticwebassets\\js\\newFile.js"
+    },
+    {
+      "Id": "C:\\Users\\vladz\\OneDrive\\Documentos\\Project\\Tasks\\TestTaskTwo\\wwwroot\\js\\package-lock.json",
+      "PackagePath": "staticwebassets\\js\\package-lock.json"
+    },
+    {
+      "Id": "C:\\Users\\vladz\\OneDrive\\Documentos\\Project\\Tasks\\TestTaskTwo\\wwwroot\\js\\package.json",
+      "PackagePath": "staticwebassets\\js\\package.json"
+    },
+    {
       "Id": "C:\\Users\\vladz\\OneDrive\\Documentos\\Project\\Tasks\\TestTaskTwo\\wwwroot\\js\\site.js",
       "PackagePath": "staticwebassets\\js\\site.js"
     },

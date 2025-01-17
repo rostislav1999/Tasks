@@ -1,6 +1,6 @@
 {
   "Version": 1,
-  "Hash": "nGKMyKXjrffjUStiYuXDnK2lZeFR+y+3CIXcg201AgI=",
+  "Hash": "S7Er37tctCVEw508FIkloTpt+x5qe5dr34US8tnc/Dw=",
   "Source": "TestTaskTwo",
   "BasePath": "_content/TestTaskTwo",
   "Mode": "Default",
@@ -920,6 +920,90 @@
       "OriginalItemSpec": "wwwroot\\img\\xxxl_2s.jpg"
     },
     {
+      "Identity": "C:\\Users\\vladz\\OneDrive\\Documentos\\Project\\Tasks\\TestTaskTwo\\wwwroot\\js\\index.js",
+      "SourceId": "TestTaskTwo",
+      "SourceType": "Discovered",
+      "ContentRoot": "C:\\Users\\vladz\\OneDrive\\Documentos\\Project\\Tasks\\TestTaskTwo\\wwwroot\\",
+      "BasePath": "_content/TestTaskTwo",
+      "RelativePath": "js/index#[.{fingerprint}]?.js",
+      "AssetKind": "All",
+      "AssetMode": "All",
+      "AssetRole": "Primary",
+      "AssetMergeBehavior": "",
+      "AssetMergeSource": "",
+      "RelatedAsset": "",
+      "AssetTraitName": "",
+      "AssetTraitValue": "",
+      "Fingerprint": "k89wd0h7qn",
+      "Integrity": "xPO9F5NZLd8+cNU2++zXpw7c0oxoW/3V+cvgLYypIz8=",
+      "CopyToOutputDirectory": "Never",
+      "CopyToPublishDirectory": "PreserveNewest",
+      "OriginalItemSpec": "wwwroot\\js\\index.js"
+    },
+    {
+      "Identity": "C:\\Users\\vladz\\OneDrive\\Documentos\\Project\\Tasks\\TestTaskTwo\\wwwroot\\js\\newFile.js",
+      "SourceId": "TestTaskTwo",
+      "SourceType": "Discovered",
+      "ContentRoot": "C:\\Users\\vladz\\OneDrive\\Documentos\\Project\\Tasks\\TestTaskTwo\\wwwroot\\",
+      "BasePath": "_content/TestTaskTwo",
+      "RelativePath": "js/newFile#[.{fingerprint}]?.js",
+      "AssetKind": "All",
+      "AssetMode": "All",
+      "AssetRole": "Primary",
+      "AssetMergeBehavior": "",
+      "AssetMergeSource": "",
+      "RelatedAsset": "",
+      "AssetTraitName": "",
+      "AssetTraitValue": "",
+      "Fingerprint": "ehqtlu0tb3",
+      "Integrity": "UthywZzXmRF0IqgV2I4Rmc9lekml7m+loyIa4AsJyFs=",
+      "CopyToOutputDirectory": "Never",
+      "CopyToPublishDirectory": "PreserveNewest",
+      "OriginalItemSpec": "wwwroot\\js\\newFile.js"
+    },
+    {
+      "Identity": "C:\\Users\\vladz\\OneDrive\\Documentos\\Project\\Tasks\\TestTaskTwo\\wwwroot\\js\\package.json",
+      "SourceId": "TestTaskTwo",
+      "SourceType": "Discovered",
+      "ContentRoot": "C:\\Users\\vladz\\OneDrive\\Documentos\\Project\\Tasks\\TestTaskTwo\\wwwroot\\",
+      "BasePath": "_content/TestTaskTwo",
+      "RelativePath": "js/package#[.{fingerprint}]?.json",
+      "AssetKind": "All",
+      "AssetMode": "All",
+      "AssetRole": "Primary",
+      "AssetMergeBehavior": "",
+      "AssetMergeSource": "",
+      "RelatedAsset": "",
+      "AssetTraitName": "",
+      "AssetTraitValue": "",
+      "Fingerprint": "9laif2wc15",
+      "Integrity": "Hb1Ee/mi5p43qcUFz/lDPLmz18iFufGraYRGlXup5c8=",
+      "CopyToOutputDirectory": "Never",
+      "CopyToPublishDirectory": "PreserveNewest",
+      "OriginalItemSpec": "wwwroot\\js\\package.json"
+    },
+    {
+      "Identity": "C:\\Users\\vladz\\OneDrive\\Documentos\\Project\\Tasks\\TestTaskTwo\\wwwroot\\js\\package-lock.json",
+      "SourceId": "TestTaskTwo",
+      "SourceType": "Discovered",
+      "ContentRoot": "C:\\Users\\vladz\\OneDrive\\Documentos\\Project\\Tasks\\TestTaskTwo\\wwwroot\\",
+      "BasePath": "_content/TestTaskTwo",
+      "RelativePath": "js/package-lock#[.{fingerprint}]?.json",
+      "AssetKind": "All",
+      "AssetMode": "All",
+      "AssetRole": "Primary",
+      "AssetMergeBehavior": "",
+      "AssetMergeSource": "",
+      "RelatedAsset": "",
+      "AssetTraitName": "",
+      "AssetTraitValue": "",
+      "Fingerprint": "sx2zg7tjin",
+      "Integrity": "YOogvPy7Jf3IoP/3v/fonYhEqtlWbXZ52zUuQsnj8f4=",
+      "CopyToOutputDirectory": "Never",
+      "CopyToPublishDirectory": "PreserveNewest",
+      "OriginalItemSpec": "wwwroot\\js\\package-lock.json"
+    },
+    {
       "Identity": "C:\\Users\\vladz\\OneDrive\\Documentos\\Project\\Tasks\\TestTaskTwo\\wwwroot\\js\\site.js",
       "SourceId": "TestTaskTwo",
       "SourceType": "Discovered",
@@ -934,8 +1018,8 @@
       "RelatedAsset": "",
       "AssetTraitName": "",
       "AssetTraitValue": "",
-      "Fingerprint": "xtxxf3hu2r",
-      "Integrity": "hRQyftXiu1lLX2P9Ly9xa4gHJgLeR1uGN5qegUobtGo=",
+      "Fingerprint": "3r8b2a0bt1",
+      "Integrity": "8ZRc1sGeVrPBx4lD717BgRaQekyh78QKV9SKsdt638U=",
       "CopyToOutputDirectory": "Never",
       "CopyToPublishDirectory": "PreserveNewest",
       "OriginalItemSpec": "wwwroot\\js\\site.js"
@@ -5502,6 +5586,379 @@
       ]
     },
     {
+      "Route": "js/index.js",
+      "AssetFile": "C:\\Users\\vladz\\OneDrive\\Documentos\\Project\\Tasks\\TestTaskTwo\\wwwroot\\js\\index.js",
+      "Selectors": [],
+      "ResponseHeaders": [
+        {
+          "Name": "Accept-Ranges",
+          "Value": "bytes"
+        },
+        {
+          "Name": "Content-Length",
+          "Value": "1927"
+        },
+        {
+          "Name": "Content-Type",
+          "Value": "text/javascript"
+        },
+        {
+          "Name": "ETag",
+          "Value": "\"xPO9F5NZLd8+cNU2++zXpw7c0oxoW/3V+cvgLYypIz8=\""
+        },
+        {
+          "Name": "Last-Modified",
+          "Value": "Fri, 17 Jan 2025 00:14:31 GMT"
+        },
+        {
+          "Name": "Cache-Control",
+          "Value": "no-cache"
+        }
+      ],
+      "EndpointProperties": [
+        {
+          "Name": "integrity",
+          "Value": "sha256-xPO9F5NZLd8+cNU2++zXpw7c0oxoW/3V+cvgLYypIz8="
+        }
+      ]
+    },
+    {
+      "Route": "js/index.k89wd0h7qn.js",
+      "AssetFile": "C:\\Users\\vladz\\OneDrive\\Documentos\\Project\\Tasks\\TestTaskTwo\\wwwroot\\js\\index.js",
+      "Selectors": [],
+      "ResponseHeaders": [
+        {
+          "Name": "Accept-Ranges",
+          "Value": "bytes"
+        },
+        {
+          "Name": "Content-Length",
+          "Value": "1927"
+        },
+        {
+          "Name": "Content-Type",
+          "Value": "text/javascript"
+        },
+        {
+          "Name": "ETag",
+          "Value": "\"xPO9F5NZLd8+cNU2++zXpw7c0oxoW/3V+cvgLYypIz8=\""
+        },
+        {
+          "Name": "Last-Modified",
+          "Value": "Fri, 17 Jan 2025 00:14:31 GMT"
+        },
+        {
+          "Name": "Cache-Control",
+          "Value": "max-age=31536000, immutable"
+        }
+      ],
+      "EndpointProperties": [
+        {
+          "Name": "fingerprint",
+          "Value": "k89wd0h7qn"
+        },
+        {
+          "Name": "label",
+          "Value": "js/index.js"
+        },
+        {
+          "Name": "integrity",
+          "Value": "sha256-xPO9F5NZLd8+cNU2++zXpw7c0oxoW/3V+cvgLYypIz8="
+        }
+      ]
+    },
+    {
+      "Route": "js/newFile.ehqtlu0tb3.js",
+      "AssetFile": "C:\\Users\\vladz\\OneDrive\\Documentos\\Project\\Tasks\\TestTaskTwo\\wwwroot\\js\\newFile.js",
+      "Selectors": [],
+      "ResponseHeaders": [
+        {
+          "Name": "Accept-Ranges",
+          "Value": "bytes"
+        },
+        {
+          "Name": "Content-Length",
+          "Value": "745"
+        },
+        {
+          "Name": "Content-Type",
+          "Value": "text/javascript"
+        },
+        {
+          "Name": "ETag",
+          "Value": "\"UthywZzXmRF0IqgV2I4Rmc9lekml7m+loyIa4AsJyFs=\""
+        },
+        {
+          "Name": "Last-Modified",
+          "Value": "Fri, 17 Jan 2025 00:34:07 GMT"
+        },
+        {
+          "Name": "Cache-Control",
+          "Value": "max-age=31536000, immutable"
+        }
+      ],
+      "EndpointProperties": [
+        {
+          "Name": "fingerprint",
+          "Value": "ehqtlu0tb3"
+        },
+        {
+          "Name": "label",
+          "Value": "js/newFile.js"
+        },
+        {
+          "Name": "integrity",
+          "Value": "sha256-UthywZzXmRF0IqgV2I4Rmc9lekml7m+loyIa4AsJyFs="
+        }
+      ]
+    },
+    {
+      "Route": "js/newFile.js",
+      "AssetFile": "C:\\Users\\vladz\\OneDrive\\Documentos\\Project\\Tasks\\TestTaskTwo\\wwwroot\\js\\newFile.js",
+      "Selectors": [],
+      "ResponseHeaders": [
+        {
+          "Name": "Accept-Ranges",
+          "Value": "bytes"
+        },
+        {
+          "Name": "Content-Length",
+          "Value": "745"
+        },
+        {
+          "Name": "Content-Type",
+          "Value": "text/javascript"
+        },
+        {
+          "Name": "ETag",
+          "Value": "\"UthywZzXmRF0IqgV2I4Rmc9lekml7m+loyIa4AsJyFs=\""
+        },
+        {
+          "Name": "Last-Modified",
+          "Value": "Fri, 17 Jan 2025 00:34:07 GMT"
+        },
+        {
+          "Name": "Cache-Control",
+          "Value": "no-cache"
+        }
+      ],
+      "EndpointProperties": [
+        {
+          "Name": "integrity",
+          "Value": "sha256-UthywZzXmRF0IqgV2I4Rmc9lekml7m+loyIa4AsJyFs="
+        }
+      ]
+    },
+    {
+      "Route": "js/package.9laif2wc15.json",
+      "AssetFile": "C:\\Users\\vladz\\OneDrive\\Documentos\\Project\\Tasks\\TestTaskTwo\\wwwroot\\js\\package.json",
+      "Selectors": [],
+      "ResponseHeaders": [
+        {
+          "Name": "Accept-Ranges",
+          "Value": "bytes"
+        },
+        {
+          "Name": "Content-Length",
+          "Value": "321"
+        },
+        {
+          "Name": "Content-Type",
+          "Value": "application/json"
+        },
+        {
+          "Name": "ETag",
+          "Value": "\"Hb1Ee/mi5p43qcUFz/lDPLmz18iFufGraYRGlXup5c8=\""
+        },
+        {
+          "Name": "Last-Modified",
+          "Value": "Thu, 16 Jan 2025 23:07:04 GMT"
+        },
+        {
+          "Name": "Cache-Control",
+          "Value": "max-age=31536000, immutable"
+        }
+      ],
+      "EndpointProperties": [
+        {
+          "Name": "fingerprint",
+          "Value": "9laif2wc15"
+        },
+        {
+          "Name": "label",
+          "Value": "js/package.json"
+        },
+        {
+          "Name": "integrity",
+          "Value": "sha256-Hb1Ee/mi5p43qcUFz/lDPLmz18iFufGraYRGlXup5c8="
+        }
+      ]
+    },
+    {
+      "Route": "js/package.json",
+      "AssetFile": "C:\\Users\\vladz\\OneDrive\\Documentos\\Project\\Tasks\\TestTaskTwo\\wwwroot\\js\\package.json",
+      "Selectors": [],
+      "ResponseHeaders": [
+        {
+          "Name": "Accept-Ranges",
+          "Value": "bytes"
+        },
+        {
+          "Name": "Content-Length",
+          "Value": "321"
+        },
+        {
+          "Name": "Content-Type",
+          "Value": "application/json"
+        },
+        {
+          "Name": "ETag",
+          "Value": "\"Hb1Ee/mi5p43qcUFz/lDPLmz18iFufGraYRGlXup5c8=\""
+        },
+        {
+          "Name": "Last-Modified",
+          "Value": "Thu, 16 Jan 2025 23:07:04 GMT"
+        },
+        {
+          "Name": "Cache-Control",
+          "Value": "no-cache"
+        }
+      ],
+      "EndpointProperties": [
+        {
+          "Name": "integrity",
+          "Value": "sha256-Hb1Ee/mi5p43qcUFz/lDPLmz18iFufGraYRGlXup5c8="
+        }
+      ]
+    },
+    {
+      "Route": "js/package-lock.json",
+      "AssetFile": "C:\\Users\\vladz\\OneDrive\\Documentos\\Project\\Tasks\\TestTaskTwo\\wwwroot\\js\\package-lock.json",
+      "Selectors": [],
+      "ResponseHeaders": [
+        {
+          "Name": "Accept-Ranges",
+          "Value": "bytes"
+        },
+        {
+          "Name": "Content-Length",
+          "Value": "66619"
+        },
+        {
+          "Name": "Content-Type",
+          "Value": "application/json"
+        },
+        {
+          "Name": "ETag",
+          "Value": "\"YOogvPy7Jf3IoP/3v/fonYhEqtlWbXZ52zUuQsnj8f4=\""
+        },
+        {
+          "Name": "Last-Modified",
+          "Value": "Thu, 16 Jan 2025 23:07:04 GMT"
+        },
+        {
+          "Name": "Cache-Control",
+          "Value": "no-cache"
+        }
+      ],
+      "EndpointProperties": [
+        {
+          "Name": "integrity",
+          "Value": "sha256-YOogvPy7Jf3IoP/3v/fonYhEqtlWbXZ52zUuQsnj8f4="
+        }
+      ]
+    },
+    {
+      "Route": "js/package-lock.sx2zg7tjin.json",
+      "AssetFile": "C:\\Users\\vladz\\OneDrive\\Documentos\\Project\\Tasks\\TestTaskTwo\\wwwroot\\js\\package-lock.json",
+      "Selectors": [],
+      "ResponseHeaders": [
+        {
+          "Name": "Accept-Ranges",
+          "Value": "bytes"
+        },
+        {
+          "Name": "Content-Length",
+          "Value": "66619"
+        },
+        {
+          "Name": "Content-Type",
+          "Value": "application/json"
+        },
+        {
+          "Name": "ETag",
+          "Value": "\"YOogvPy7Jf3IoP/3v/fonYhEqtlWbXZ52zUuQsnj8f4=\""
+        },
+        {
+          "Name": "Last-Modified",
+          "Value": "Thu, 16 Jan 2025 23:07:04 GMT"
+        },
+        {
+          "Name": "Cache-Control",
+          "Value": "max-age=31536000, immutable"
+        }
+      ],
+      "EndpointProperties": [
+        {
+          "Name": "fingerprint",
+          "Value": "sx2zg7tjin"
+        },
+        {
+          "Name": "label",
+          "Value": "js/package-lock.json"
+        },
+        {
+          "Name": "integrity",
+          "Value": "sha256-YOogvPy7Jf3IoP/3v/fonYhEqtlWbXZ52zUuQsnj8f4="
+        }
+      ]
+    },
+    {
+      "Route": "js/site.3r8b2a0bt1.js",
+      "AssetFile": "C:\\Users\\vladz\\OneDrive\\Documentos\\Project\\Tasks\\TestTaskTwo\\wwwroot\\js\\site.js",
+      "Selectors": [],
+      "ResponseHeaders": [
+        {
+          "Name": "Accept-Ranges",
+          "Value": "bytes"
+        },
+        {
+          "Name": "Content-Length",
+          "Value": "3"
+        },
+        {
+          "Name": "Content-Type",
+          "Value": "text/javascript"
+        },
+        {
+          "Name": "ETag",
+          "Value": "\"8ZRc1sGeVrPBx4lD717BgRaQekyh78QKV9SKsdt638U=\""
+        },
+        {
+          "Name": "Last-Modified",
+          "Value": "Fri, 17 Jan 2025 00:34:07 GMT"
+        },
+        {
+          "Name": "Cache-Control",
+          "Value": "max-age=31536000, immutable"
+        }
+      ],
+      "EndpointProperties": [
+        {
+          "Name": "fingerprint",
+          "Value": "3r8b2a0bt1"
+        },
+        {
+          "Name": "label",
+          "Value": "js/site.js"
+        },
+        {
+          "Name": "integrity",
+          "Value": "sha256-8ZRc1sGeVrPBx4lD717BgRaQekyh78QKV9SKsdt638U="
+        }
+      ]
+    },
+    {
       "Route": "js/site.js",
       "AssetFile": "C:\\Users\\vladz\\OneDrive\\Documentos\\Project\\Tasks\\TestTaskTwo\\wwwroot\\js\\site.js",
       "Selectors": [],
@@ -5512,7 +5969,7 @@
         },
         {
           "Name": "Content-Length",
-          "Value": "231"
+          "Value": "3"
         },
         {
           "Name": "Content-Type",
@@ -5520,11 +5977,11 @@
         },
         {
           "Name": "ETag",
-          "Value": "\"hRQyftXiu1lLX2P9Ly9xa4gHJgLeR1uGN5qegUobtGo=\""
+          "Value": "\"8ZRc1sGeVrPBx4lD717BgRaQekyh78QKV9SKsdt638U=\""
         },
         {
           "Name": "Last-Modified",
-          "Value": "Thu, 02 Jan 2025 05:33:16 GMT"
+          "Value": "Fri, 17 Jan 2025 00:34:07 GMT"
         },
         {
           "Name": "Cache-Control",
@@ -5534,52 +5991,7 @@
       "EndpointProperties": [
         {
           "Name": "integrity",
-          "Value": "sha256-hRQyftXiu1lLX2P9Ly9xa4gHJgLeR1uGN5qegUobtGo="
-        }
-      ]
-    },
-    {
-      "Route": "js/site.xtxxf3hu2r.js",
-      "AssetFile": "C:\\Users\\vladz\\OneDrive\\Documentos\\Project\\Tasks\\TestTaskTwo\\wwwroot\\js\\site.js",
-      "Selectors": [],
-      "ResponseHeaders": [
-        {
-          "Name": "Accept-Ranges",
-          "Value": "bytes"
-        },
-        {
-          "Name": "Content-Length",
-          "Value": "231"
-        },
-        {
-          "Name": "Content-Type",
-          "Value": "text/javascript"
-        },
-        {
-          "Name": "ETag",
-          "Value": "\"hRQyftXiu1lLX2P9Ly9xa4gHJgLeR1uGN5qegUobtGo=\""
-        },
-        {
-          "Name": "Last-Modified",
-          "Value": "Thu, 02 Jan 2025 05:33:16 GMT"
-        },
-        {
-          "Name": "Cache-Control",
-          "Value": "max-age=31536000, immutable"
-        }
-      ],
-      "EndpointProperties": [
-        {
-          "Name": "fingerprint",
-          "Value": "xtxxf3hu2r"
-        },
-        {
-          "Name": "label",
-          "Value": "js/site.js"
-        },
-        {
-          "Name": "integrity",
-          "Value": "sha256-hRQyftXiu1lLX2P9Ly9xa4gHJgLeR1uGN5qegUobtGo="
+          "Value": "sha256-8ZRc1sGeVrPBx4lD717BgRaQekyh78QKV9SKsdt638U="
         }
       ]
     },

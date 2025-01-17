@@ -1,8 +1,8 @@
-using System.Diagnostics;
 using Microsoft.AspNetCore.Mvc;
-using Microsoft.Extensions.Logging;
-using PizzaApp.Repositories;
-using TestTaskTwo.Models;
+using PizzaApp.Repositories; // Репозиторий для работы с данными о пиццах
+using TestTaskTwo.Models; // Модель для пиццы
+using System.Collections.Generic;
+using System.Diagnostics;
 
 namespace TestTaskTwo.Controllers
 {
@@ -14,21 +14,30 @@ namespace TestTaskTwo.Controllers
         public HomeController(ILogger<HomeController> logger)
         {
             _logger = logger;
-            _pizzaRepository = new PizzaRepository();
+            _pizzaRepository = new PizzaRepository(); // Создаем экземпляр репозитория
         }
 
+        // Главная страница, передаем данные на представление
         public IActionResult Index()
         {
-            var pizzas = _pizzaRepository.GetAllPizzas();
-
-            return View(pizzas);
+            var pizzas = _pizzaRepository.GetAllPizzas(); // Получаем пиццы
+            return View(pizzas); // Отправляем пиццы в представление
         }
 
+        // Новый метод для получения пицц через API в формате JSON
+        public IActionResult GetPizzas()
+        {
+            var pizzas = _pizzaRepository.GetAllPizzas(); // Получаем пиццы
+            return Json(pizzas); // Возвращаем данные в формате JSON
+        }
+
+        // Страница Privacy
         public IActionResult Privacy()
         {
             return View();
         }
 
+        // Страница ошибки
         [ResponseCache(Duration = 0, Location = ResponseCacheLocation.None, NoStore = true)]
         public IActionResult Error()
         {
@@ -36,13 +45,3 @@ namespace TestTaskTwo.Controllers
         }
     }
 }
-
-
-
-
-
-
-
-
-
-
