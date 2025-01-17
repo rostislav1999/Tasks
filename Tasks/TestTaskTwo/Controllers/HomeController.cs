@@ -22,14 +22,14 @@ namespace TestTaskTwo.Controllers
         // Метод для отображения главной страницы с пиццами
         public IActionResult Index()
         {
-            var pizzas = _pizzaRepository.GetAllPizzas(); // Исправлено название метода
+            var pizzas = _pizzaRepository.GetAllPizzas(); 
             return View(pizzas);
         }
 
         // Метод для получения списка пицц в формате JSON
         public IActionResult GetPizzas()
         {
-            var pizzas = _pizzaRepository.GetAllPizzas(); // Исправлено название метода
+            var pizzas = _pizzaRepository.GetAllPizzas(); 
             return Json(pizzas);
         }
 

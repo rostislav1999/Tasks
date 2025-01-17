@@ -21,3 +21,19 @@
         }
     </tbody>
 </table>
+
+<script>
+    // Ожидаем загрузки DOM
+    document.addEventListener('DOMContentLoaded', function () {
+        // Выполняем запрос сразу после загрузки страницы
+        fetch('/Pizza/GetPizzas')  // Предполагаем, что это путь для получения списка пицц
+            .then(response => response.json())
+            .then(data => {
+                console.log(data);  // Можно выполнить что-то с данными, например, отобразить
+                // Здесь можно обработать или вывести данные на странице
+            })
+            .catch(error => {
+                console.error('Error fetching pizzas:', error);
+            });
+    });
+</script>
