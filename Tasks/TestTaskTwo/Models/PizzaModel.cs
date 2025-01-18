@@ -1,3 +1,5 @@
+using System;
+using System.Collections.Generic;
 namespace PizzaApp.Models
 {
     public class PizzaModel
@@ -5,13 +7,14 @@ namespace PizzaApp.Models
         public int Id { get; set; }
         public string Name { get; set; }
         public decimal Price { get; set; }
+        public string Image { get; set; } 
 
-        // Конструктор с параметрами
-        public PizzaModel(int id, string name, decimal price)
+        public PizzaModel(int id, string name, decimal price, string image)
         {
             Id = id;
             Name = name;
             Price = price;
+            Image = image;
         }
     }
 }

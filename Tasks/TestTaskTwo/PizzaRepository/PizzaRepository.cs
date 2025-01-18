@@ -6,31 +6,20 @@ namespace PizzaApp.PizzaRepositories
 {
     public class PizzaRepository
     {
-        private readonly List<PizzaModel> _pizzas;
-
-        public PizzaRepository()
-        {
-            // Инициализируем список пицц
-            _pizzas = new List<PizzaModel>
-            {
-                new PizzaModel(1, "Margherita", 8.99M),
-                new PizzaModel(2, "Pepperoni", 10.99M),
-                new PizzaModel(3, "Hawaiian", 9.99M),
-                new PizzaModel(4, "Veggie", 11.99M)
-            };
-        }
-
-        // Метод для получения всех пицц
         public IEnumerable<PizzaModel> GetAllPizzas()
         {
-            return _pizzas;
+            return new List<PizzaModel>
+            {
+                new PizzaModel(1, "4 вкуса", 8.99M, "~/img/4_vkusa_2s.jpg"),
+                new PizzaModel(2, "Амазонка", 10.99M, "~/img/amazonka_2s.jpg"),
+                new PizzaModel(3, "БананнZZa", 9.99M, "~/img/bananzza_2s.jpg"),
+                new PizzaModel(4, "Барбекью", 11.99M, "~/img/barbeq_2s.jpg")
+                  };
         }
 
-        // Метод для получения пиццы по ID
         public PizzaModel FindById(int id)
         {
-            // Ищем пиццу по ID, если не найдена, возвращается null (через FirstOrDefault)
-            return _pizzas.FirstOrDefault(p => p.Id == id);
+            return GetAllPizzas().FirstOrDefault(p => p.Id == id);
         }
     }
 }
