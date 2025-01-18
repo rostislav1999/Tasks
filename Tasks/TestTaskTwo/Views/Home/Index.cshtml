@@ -5,9 +5,10 @@
 <table class="table">
     <thead>
         <tr>
-            <th>Id</th>
+            <th>ID</th>
             <th>Name</th>
             <th>Price</th>
+            <th>Actions</th>
         </tr>
     </thead>
     <tbody>
@@ -17,23 +18,36 @@
                 <td>@pizza.Id</td>
                 <td>@pizza.Name</td>
                 <td>@pizza.Price</td>
+                <td><a href="/Pizza/Detail/@pizza.Id">Details</a></td>
             </tr>
         }
     </tbody>
 </table>
 
+<div id="details" style="margin-top: 20px; display: none;">
+    <h2>Pizza Details</h2>
+    <p><strong>ID:</strong> <span id="detail-id"></span></p>
+    <p><strong>Name:</strong> <span id="detail-name"></span></p>
+    <p><strong>Price:</strong> <span id="detail-price"></span></p>
+</div>
+
 <script>
-    // Ожидаем загрузки DOM
-    document.addEventListener('DOMContentLoaded', function () {
-        // Выполняем запрос сразу после загрузки страницы
-        fetch('/Pizza/GetPizzas')  // Предполагаем, что это путь для получения списка пицц
-            .then(response => response.json())
+    function showDetails(id) {
+        fetch(/Pizza/Detail/${id})
+            .then(response => {
+                if (!response.ok) {
+                    throw new Error('Pizza not found');
+                }
+                return response.json();
+            })
             .then(data => {
-                console.log(data);  // Можно выполнить что-то с данными, например, отобразить
-                // Здесь можно обработать или вывести данные на странице
+                document.getElementById('details').style.display = 'block';
+                document.getElementById('detail-id').textContent = data.id;
+                document.getElementById('detail-name').textContent = data.name;
+                document.getElementById('detail-price').textContent = data.price;
             })
             .catch(error => {
-                console.error('Error fetching pizzas:', error);
+                alert(error.message);
             });
-    });
+    }
 </script>
