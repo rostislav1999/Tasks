@@ -4,66 +4,17 @@
 <html>
 <head>
     <title>@Model.Name - Pizza Details</title>
-    <style>
-        body {
-            font-family: Arial, sans-serif;
-            margin: 0;
-            padding: 0;
-            background-color: #f8f9fa;
-        }
-
-        .container {
-            max-width: 800px;
-            margin: 20px auto;
-            padding: 20px;
-            background-color: white;
-            box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
-            border-radius: 8px;
-            text-align: center;
-        }
-
-        .pizza-image {
-            width: 100%;
-            max-width: 400px;
-            height: auto;
-            border-radius: 8px;
-        }
-
-        .pizza-name {
-            font-size: 2rem;
-            margin: 20px 0 10px;
-            color: #333;
-        }
-
-        .pizza-price {
-            font-size: 1.5rem;
-            margin: 10px 0;
-            color: #28a745;
-        }
-
-        .back-button {
-            display: inline-block;
-            margin-top: 20px;
-            padding: 10px 20px;
-            font-size: 1rem;
-            color: white;
-            background-color: #007bff;
-            border: none;
-            border-radius: 5px;
-            text-decoration: none;
-        }
-
-            .back-button:hover {
-                background-color: #0056b3;
-            }
-    </style>
+    <link rel="stylesheet" href="css/site.css">
 </head>
 <body>
     <div class="container">
         <img src="@Url.Content(Model.Image)"
+             onerror="this.src='/images/placeholder.jpg';"
              alt="@Model.Name"
              class="pizza-image" />
-        <h1 class="pizza-name">@Model.Name</h1>
+        <h1 class="pizza-name">
+            <a href="/Pizza/Index" class="pizza-link">@Model.Name</a>
+        </h1>
         <p class="pizza-price">Price: $@Model.Price</p>
         <a href="/Pizza/Index" class="back-button">Back to Menu</a>
     </div>
