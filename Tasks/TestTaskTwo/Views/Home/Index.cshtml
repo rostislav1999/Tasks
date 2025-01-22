@@ -45,17 +45,18 @@
     }
     else
     {
-     
         @foreach (var pizza in Model)  
         {
          <div class="menu-item">
                 <h3>@pizza.Name</h3> 
-                <img src="@pizza.Image" alt="@pizza.Name" width="200" height="200" />  <!-- Изображение пиццы -->
-                <p><strong>Состав:</strong> @string.Join(", ", pizza.Composition)</p>  <!-- Состав пиццы -->
-                <p><strong>Размеры:</strong> @string.Join(", ", pizza.Sizes)</p>  <!-- Доступные размеры пиццы -->
-                <p><strong>Тесто:</strong> @pizza.Crust</p>  <!-- Тип теста -->
-                <p><strong>Цена:</strong> @pizza.Price руб.</p>  <!-- Цена пиццы -->
-                <p><strong>Вес:</strong> @pizza.Weight</p>  <!-- Вес пиццы -->
+                <img src="@pizza.Image" alt="@pizza.Name" width="200" height="200" /> 
+                <p> @string.Join(", ", pizza.Composition)</p>
+              <div style="display: flex;">
+                <p style="margin-right: 10px;">Размеры:</p><p> @string.Join(", ", pizza.Sizes)</p>
+               </div>
+                <p> @pizza.Crust</p>  
+                <p> @pizza.Price руб.</p>  
+                <p> @pizza.Weight</p> 
 						</div>
         }
     
