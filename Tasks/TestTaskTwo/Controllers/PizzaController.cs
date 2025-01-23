@@ -15,8 +15,8 @@ namespace PizzaApp.Controllers
 
         public IActionResult Index()
         {
-            var pizzas = _pizzaRepository.GetAllPizzas(); // Получаем список пицц
-            return View(pizzas); // Передаем в представление
+            var pizzas = _pizzaRepository.GetAllPizzas(); 
+            return View(pizzas); 
         }
     }
 }
