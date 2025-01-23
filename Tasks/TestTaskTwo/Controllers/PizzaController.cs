@@ -1,5 +1,5 @@
 using Microsoft.AspNetCore.Mvc;
-using PizzaApp.PizzaRepositories;
+using PizzaApp.Repositories;
 using PizzaApp.Models;
 
 namespace PizzaApp.Controllers
@@ -8,15 +8,15 @@ namespace PizzaApp.Controllers
     {
         private readonly PizzaRepository _pizzaRepository;
 
-        public PizzaController(PizzaRepository pizzaRepository)
+        public PizzaController()
         {
-            _pizzaRepository = pizzaRepository;
+            _pizzaRepository = new PizzaRepository();
         }
 
         public IActionResult Index()
         {
-            var pizzas = _pizzaRepository.GetAllPizzas();  
-            return View("~/Views/Home/Index.cshtml", pizzas); 
+            var pizzas = _pizzaRepository.GetAllPizzas(); // Получаем список пицц
+            return View(pizzas); // Передаем в представление
         }
     }
 }

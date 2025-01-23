@@ -1,4 +1,3 @@
-/* Общие стили */
 body {
     font-family: Arial, sans-serif;
     margin: 0;
@@ -15,7 +14,6 @@ p {
     margin: 5px 0;
 }
 
-/* Header */
 header {
     background-color: #f8f8f8;
     padding: 20px;
@@ -28,7 +26,6 @@ header {
     color: #555;
 }
 
-/* Categories */
 .categories {
     text-align: center;
     padding: 8px;
@@ -36,7 +33,6 @@ header {
     font-weight: bold;
 }
 
-/* Menu */
 .menu {
     padding: 20px;
 }
@@ -45,10 +41,12 @@ header {
     display: flex;
     flex-wrap: wrap;
     gap: 20px;
+    justify-content: flex-start;
 }
 
 .menu-item {
-    flex: 1 1 calc(25% - 20px);
+    flex: 0 0 calc(25% - 20px);
+    max-width: calc(25% - 20px);
     padding: 10px;
     border: 1px solid #e0e0e0;
     border-radius: 5px;
@@ -71,7 +69,7 @@ img {
     height: auto;
 }
 
-/* Footer */
+
 footer {
     background-color: #f8f8f8;
     padding: 8px;
