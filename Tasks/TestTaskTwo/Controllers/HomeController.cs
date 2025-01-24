@@ -36,13 +36,3 @@ namespace TestTaskTwo.Controllers
         }
     }
 }
-
-
-
-
-
-
-
-
-
-

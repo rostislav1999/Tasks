@@ -8,15 +8,15 @@ namespace PizzaApp.Controllers
     {
         private readonly PizzaRepository _pizzaRepository;
 
-        public PizzaController()
+        public PizzaController(PizzaRepository pizzaRepository)
         {
-            _pizzaRepository = new PizzaRepository();
+            _pizzaRepository = pizzaRepository;
         }
 
-        public IActionResult Index()
+        public IActionResult GetPizzas(List<int> ids)
         {
-            var pizzas = _pizzaRepository.GetAllPizzas(); // Получаем список пицц
-            return View(pizzas); // Передаем в представление
+            var pizzas = _pizzaRepository.FindByIds(ids); // Проверить, что метод FindByIds не выбрасывает исключение
+            return View(pizzas);
         }
     }
 }
