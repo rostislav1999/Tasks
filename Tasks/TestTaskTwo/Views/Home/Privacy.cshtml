@@ -3,4 +3,27 @@
 }
 <h1>@ViewData["Title"]</h1>
 
-<p>Use this page to detail your site's privacy policy.</p>
+<script>
+    // Данные пиццы (в реальном приложении вы могли бы передавать их с сервера)
+    const pizzas = @Html.Raw(System.Text.Json.JsonSerializer.Serialize(Model));
+
+    // Контейнер для списка
+    const container = document.getElementById('pizza-list');
+
+    // Генерация ссылок
+    pizzas.forEach(pizza => {
+        const div = document.createElement('div');
+        div.classList.add('menu-item');
+
+        div.innerHTML =
+            <h5>${pizza.id}</h5>
+            <h3>
+                <a href="/Pizza/Detail/${pizza.id}">${pizza.name}</a>
+            </h3>
+            <img src="${pizza.image}" alt="${pizza.name}" width="200" height="200" />
+            <p>${pizza.ingredients.join(', ')}</p>
+            <p>${pizza.price} руб.</p>
+        ;
+        container.appendChild(div);
+    });
+</script>

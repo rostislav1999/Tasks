@@ -49,7 +49,7 @@
         {
          <div class="menu-item">
             <h5>@pizza.Id</h5>
-            <h3><a>@pizza.Name</a></h3>
+            <h3><a href="/Pizza/Detail/@pizza.Id">@pizza.Name</a></h3>
             <img src="@pizza.Image" alt="@pizza.Name" width="200" height="200" />
             <p> @string.Join(", ", pizza.Ingredients)</p>
             <p> @pizza.Price руб.</p>   
