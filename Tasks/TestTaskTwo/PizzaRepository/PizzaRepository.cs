@@ -1,17 +1,14 @@
-using System.Linq;
+using System.Collections.Generic;
+using System.Linq; // Для LINQ, если используется FirstOrDefault
 using PizzaApp.Models;
 
 namespace PizzaApp.Repositories
 {
     public class PizzaRepository
     {
-        private List<PizzaModel> _pizzas;
-
-        public PizzaRepository()
+        // Список всех пицц
+        private static List<PizzaModel> pizzas = new List<PizzaModel>
         {
-
-            _pizzas = new List<PizzaModel>
-            {
 new PizzaModel {
     Id = 1,
     Name = "Capriccio",
@@ -278,18 +275,18 @@ new PizzaModel {
     Price = 600m,
     Image = "../img/cezar_s_lososem_2s.jpg"
 }
-       };
+        };
+
+        // Метод для получения всех пицц
+        public List<PizzaModel> GetAllPizzas()
+        {
+            return pizzas;
         }
 
-
-        public List<PizzaModel> FindByIds(List<int> ids)
+        // Метод для получения пиццы по ID
+        public PizzaModel GetPizzaById(int id)
         {
-            return _pizzas.Where(pizza => ids.Contains(pizza.Id)).ToList(); // Реализованный метод
-        }
-
-        internal List<PizzaModel> GetAllPizzas()
-        {
-            return _pizzas;
+            return pizzas.FirstOrDefault(pizza => pizza.Id == id);
         }
     }
 }

@@ -1,38 +1,38 @@
-using System.Diagnostics;
 using Microsoft.AspNetCore.Mvc;
-using Microsoft.Extensions.Logging;
 using PizzaApp.Repositories;
-using TestTaskTwo.Models;
+using PizzaApp.Models;
 
-namespace TestTaskTwo.Controllers
+namespace PizzaApp.Controllers
 {
     public class HomeController : Controller
     {
-        private readonly ILogger<HomeController> _logger;
         private readonly PizzaRepository _pizzaRepository;
 
-        public HomeController(ILogger<HomeController> logger)
+        public HomeController(PizzaRepository pizzaRepository)
         {
-            _logger = logger;
-            _pizzaRepository = new PizzaRepository();
+            _pizzaRepository = pizzaRepository;
         }
 
         public IActionResult Index()
         {
-            var pizzas = _pizzaRepository.GetAllPizzas();
-
+            var pizzas = _pizzaRepository.GetAllPizzas(); // Убедитесь, что этот метод вызывается
+            return View(pizzas);
+        }
+        public IActionResult Privacy()
+        {
+            var pizzas = _pizzaRepository.GetAllPizzas(); // Убедитесь, что этот метод вызывается
             return View(pizzas);
         }
 
-        public IActionResult Privacy()
+        public IActionResult Detail(int id)
         {
-            return View();
-        }
+            var pizza = _pizzaRepository.GetPizzaById(id);
+            if (pizza == null)
+            {
+                return NotFound("Пицца не найдена.");
+            }
 
-        [ResponseCache(Duration = 0, Location = ResponseCacheLocation.None, NoStore = true)]
-        public IActionResult Error()
-        {
-            return View(new ErrorViewModel { RequestId = Activity.Current?.Id ?? HttpContext.TraceIdentifier });
+            return View(pizza);
         }
     }
 }

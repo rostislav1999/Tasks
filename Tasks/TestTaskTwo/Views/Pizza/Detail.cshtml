@@ -1,0 +1,26 @@
+﻿@using PizzaApp.Repositories
+@model PizzaApp.Models.PizzaModel
+
+
+<!DOCTYPE html>
+<html lang="ru">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>@Model.Name - Детали</title>
+    <link rel="stylesheet" href="~/css/site.css">
+</head>
+<body>
+    <header>
+        <h1>Детали пиццы</h1>
+    </header>
+    <main>
+        <div class="pizza-detail">
+            <img src="~/@Model.Image" alt="@Model.Name" width="400" />
+            <h2>@Model.Name</h2>
+            <p><strong>Ингредиенты:</strong> @Model.Ingredients</p>
+            <p><strong>Цена:</strong> @Model.Price руб.</p>
+        </div>
+    </main>
+</body>
+</html>

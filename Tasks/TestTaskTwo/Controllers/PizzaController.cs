@@ -8,15 +8,29 @@ namespace PizzaApp.Controllers
     {
         private readonly PizzaRepository _pizzaRepository;
 
+        // Конструктор с внедрением зависимости PizzaRepository
         public PizzaController(PizzaRepository pizzaRepository)
         {
-            _pizzaRepository = pizzaRepository;
+            _pizzaRepository = pizzaRepository ?? throw new ArgumentNullException(nameof(pizzaRepository));
         }
 
-        public IActionResult GetPizzas(List<int> ids)
+        // Метод для отображения списка всех пицц
+        public IActionResult Index()
         {
-            var pizzas = _pizzaRepository.FindByIds(ids); // Проверить, что метод FindByIds не выбрасывает исключение
+            var pizzas = _pizzaRepository.GetAllPizzas(); // Убедитесь, что этот метод вызывается
             return View(pizzas);
+        }
+
+        // Метод для отображения деталей пиццы по её ID
+        public IActionResult Detail(int id)
+        {
+            var pizza = _pizzaRepository.GetPizzaById(id);
+            if (pizza == null)
+            {
+                return NotFound("Пицца не найдена.");
+            }
+
+            return View(pizza);
         }
     }
 }
