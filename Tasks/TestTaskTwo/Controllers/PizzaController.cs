@@ -1,5 +1,5 @@
 using Microsoft.AspNetCore.Mvc;
-using PizzaApp.PizzaRepositories;
+using PizzaApp.Repositories;
 using PizzaApp.Models;
 
 namespace PizzaApp.Controllers
@@ -8,26 +8,15 @@ namespace PizzaApp.Controllers
     {
         private readonly PizzaRepository _pizzaRepository;
 
-        public PizzaController(PizzaRepository pizzaRepository)
+        public PizzaController()
         {
-            _pizzaRepository = pizzaRepository;
+            _pizzaRepository = new PizzaRepository();
         }
 
         public IActionResult Index()
         {
-            var pizzas = _pizzaRepository.GetAllPizzas();
-            return View("~/Views/Home/Index.cshtml", pizzas);
-        }
-
-        // Метод для отображения деталей пиццы
-        public IActionResult Detail(int id)
-        {
-            var pizza = _pizzaRepository.FindById(id);
-            if (pizza == null)
-            {
-                return NotFound(); // Возвращаем 404, если пицца не найдена
-            }
-            return View("~/Views/Home/Detail.cshtml", pizza); // Передаем объект пиццы в представление
+            var pizzas = _pizzaRepository.GetAllPizzas(); // Получаем список пицц
+            return View(pizzas); // Передаем в представление
         }
     }
 }
