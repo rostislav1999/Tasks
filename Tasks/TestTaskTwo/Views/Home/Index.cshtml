@@ -1,4 +1,5 @@
-﻿@using PizzaApp.Models
+﻿@using System.Linq
+@using PizzaApp.Models
 @model List<PizzaApp.Models.PizzaModel>
 
 <!DOCTYPE html>
@@ -8,6 +9,7 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Доставка Пиццы и Роллов</title>
     <link rel="stylesheet" href="~/css/site.css">
+    <script src="https://code.jquery.com/jquery-3.6.0.min.js"></script>
 </head>
 <body>
     <header>
@@ -39,26 +41,24 @@
         </nav>
         <section class="menu">
             <div class="menu-flex">
-    @if (Model == null || !Model.Any())
-    {
-    <p>Пиццы не найдены.</p>
-    }
-    else
-    {
-        @foreach (var pizza in Model)  
-        {
-         <div class="menu-item">
-            <h5>@pizza.Id</h5>
-            <h3><a href="/Pizza/Detail/@pizza.Id">@pizza.Name</a></h3>
-            <img src="@pizza.Image" alt="@pizza.Name" width="200" height="200" />
-            <p> @string.Join(", ", pizza.Ingredients)</p>
-            <p> @pizza.Price руб.</p>   
-						</div>
-        }
-
+                @if (Model == null || !Model.Any())
+                {
+                    <p>Пиццы не найдены.</p>
+                }
+                else
+                {
+                    @foreach (var pizza in Model)
+                    {
+                        <div class="menu-item">
+                            <h5>@pizza.Id</h5>
+                            <h3><a href="/Pizza/Detail/@pizza.Id">@pizza.Name</a></h3>
+                            <img class="pizza-image" data-id="@pizza.Id" src="@pizza.Image" alt="@pizza.Name" width="200" height="200" />
+                            <p>@string.Join(", ", pizza.Ingredients)</p>
+                            <p>@pizza.Price руб.</p>
+                        </div>
                     }
-                </div>
-            
+                }
+            </div>
         </section>
     </main>
     <footer>
@@ -67,5 +67,14 @@
             <p>Альтернативный номер: 4-04-77</p>
         </div>
     </footer>
+    <script>
+        $(document).ready(function () {
+            // Добавляем обработчик события click
+            $('.pizza-image').on('click', function () {
+                var pizzaId = $(this).data('id'); // Получаем ID пиццы
+                window.location.href = '/Pizza/Detail/' + pizzaId; // Перенаправляем на страницу деталей
+            });
+        });
+    </script>
 </body>
 </html>
