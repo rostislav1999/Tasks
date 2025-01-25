@@ -1,8 +1,4 @@
-﻿@using System.Linq
-@using PizzaApp.Models
-@model List<PizzaApp.Models.PizzaModel>
-
-<!DOCTYPE html>
+﻿<!DOCTYPE html>
 <html lang="ru">
 <head>
     <meta charset="UTF-8">
@@ -69,10 +65,9 @@
     </footer>
     <script>
         $(document).ready(function () {
-            // Добавляем обработчик события click
             $('.pizza-image').on('click', function () {
-                var pizzaId = $(this).data('id'); // Получаем ID пиццы
-                window.location.href = '/Pizza/Detail/' + pizzaId; // Перенаправляем на страницу деталей
+                var pizzaId = $(this).data('id');
+                location.href = '/Pizza/Detail/' + pizzaId;
             });
         });
     </script>
