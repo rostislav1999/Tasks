@@ -288,5 +288,11 @@ new PizzaModel {
         {
             return pizzas.FirstOrDefault(pizza => pizza.Id == id);
         }
+
+        // Ќовый метод FindById, который по сути делает то же самое
+        public PizzaModel FindById(int id)
+        {
+            return pizzas.FirstOrDefault(pizza => pizza.Id == id);
+        }
     }
 }

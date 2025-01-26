@@ -56,5 +56,23 @@ namespace PizzaApp.Controllers
                 image = Url.Content($"~/{pizza.Image}")
             });
         }
+
+        public IActionResult GetPizzaById(int id)
+        {
+            var pizza = _pizzaRepository.FindById(id);  // Используйте метод FindById вместо GetPizzaById
+            if (pizza == null)
+            {
+                return NotFound("Пицца не найдена.");
+            }
+
+            return Json(new
+            {
+                id = pizza.Id,
+                name = pizza.Name,
+                ingredients = pizza.Ingredients,
+                price = pizza.Price,
+                image = Url.Content($"~/{pizza.Image}")
+            });
+        }
     }
 }
