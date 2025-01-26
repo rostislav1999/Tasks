@@ -14,21 +14,21 @@ namespace PizzaApp.Controllers
             _pizzaRepository = pizzaRepository ?? throw new ArgumentNullException(nameof(pizzaRepository));
         }
 
-        // Метод для отображения списка всех пицц
+        // Метод Index
         public IActionResult Index()
         {
-            var pizzas = _pizzaRepository.GetAllPizzas(); // Убедитесь, что этот метод вызывается
+            var pizzas = _pizzaRepository.GetAllPizzas();
             return View(pizzas);
         }
 
         // Новый метод IndexNew
         public IActionResult IndexNew()
         {
-            var pizzas = _pizzaRepository.GetAllPizzas(); // Или используйте другие методы для фильтрации данных
-            return View(pizzas); // Отображение пицц на новой странице
+            var pizzas = _pizzaRepository.GetAllPizzas(); // Тот же код, что и в Index
+            return View(pizzas);
         }
 
-        // Метод для отображения деталей пиццы по её ID
+        // Метод Detail
         public IActionResult Detail(int id)
         {
             var pizza = _pizzaRepository.GetPizzaById(id);
