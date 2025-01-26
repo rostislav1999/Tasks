@@ -39,5 +39,22 @@ namespace PizzaApp.Controllers
 
             return View(pizza);
         }
+
+        public IActionResult GetDetails(int id)
+        {
+            var pizza = _pizzaRepository.GetPizzaById(id);
+            if (pizza == null)
+            {
+                return NotFound();
+            }
+
+            return Json(new
+            {
+                name = pizza.Name,
+                ingredients = pizza.Ingredients,
+                price = pizza.Price,
+                image = Url.Content($"~/{pizza.Image}")
+            });
+        }
     }
 }

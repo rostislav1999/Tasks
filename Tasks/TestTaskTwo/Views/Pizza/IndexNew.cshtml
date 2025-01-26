@@ -9,6 +9,8 @@
     <title>Доставка Пиццы и Роллов</title>
     <link rel="stylesheet" href="~/css/site.css">
     <script src="https://code.jquery.com/jquery-3.6.0.min.js"></script>
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/css/bootstrap.min.css">
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/js/bootstrap.bundle.min.js"></script>
 </head>
 <body>
     <header>
@@ -50,7 +52,7 @@
                     {
                         <div class="menu-item">
                             <h5>@pizza.Id</h5>
-                            <h3 href="/Pizza/Detail/@pizza.Id">@pizza.Name</h3>
+                            <h3 class="pizza-name" data-id="@pizza.Id">@pizza.Name</h3>
                             <img class="pizza-image" data-id="@pizza.Id" src="@pizza.Image" alt="@pizza.Name" width="200" height="200" />
                             <p>@string.Join(", ", pizza.Ingredients)</p>
                             <p>@pizza.Price руб.</p>
@@ -66,11 +68,48 @@
             <p>Альтернативный номер: 4-04-77</p>
         </div>
     </footer>
+
+    <!-- Модальное окно -->
+    <div class="modal fade" id="pizzaModal" tabindex="-1" aria-labelledby="pizzaModalLabel" aria-hidden="true">
+        <div class="modal-dialog">
+            <div class="modal-content">
+                <div class="modal-header">
+                    <h5 class="modal-title" id="pizzaModalLabel">Описание пиццы</h5>
+                    <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Закрыть"></button>
+                </div>
+                <div class="modal-body">
+                    <img id="modalImage" src="" alt="" class="img-fluid mb-3">
+                    <h3 id="modalName"></h3>
+                    <p><strong>Ингредиенты:</strong> <span id="modalIngredients"></span></p>
+                    <p><strong>Цена:</strong> <span id="modalPrice"></span> руб.</p>
+                </div>
+            </div>
+        </div>
+    </div>
     <script>
         $(document).ready(function () {
-            $('.pizza-image').on('click', function () {
-                var pizzaId = $(this).data('id');
-                location.href = '/Pizza/Detail/' + pizzaId;
+            $('.menu').on('click', '.pizza-name', function () {
+                const pizzaId = $(this).data('id');
+
+                // Запрос данных о пицце через AJAX
+                $.ajax({
+                    url: '/Pizza/GetDetails', // Убедитесь, что в контроллере есть метод GetDetails
+                    type: 'GET',
+                    data: { id: pizzaId },
+                    success: function (data) {
+                        // Заполнение данных в модальном окне
+                        $('#modalImage').attr('src', data.image);
+                        $('#modalName').text(data.name);
+                        $('#modalIngredients').text(data.ingredients);
+                        $('#modalPrice').text(data.price);
+
+                        // Показ модального окна
+                        $('#pizzaModal').modal('show');
+                    },
+                    error: function () {
+                        alert('Ошибка загрузки данных о пицце.');
+                    }
+                });
             });
         });
     </script>
