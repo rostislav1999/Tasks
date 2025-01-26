@@ -88,24 +88,28 @@
     </div>
     <script>
         $(document).ready(function () {
-            $('.menu').on('click', '.pizza-name', function () {
-                // Находим родительский контейнер с данными о пицце
-                var pizzaItem = $(this).closest('.menu-item');
+            // Обработчик клика на изображение пиццы
+            $('.menu').on('click', '.pizza-image', function () {
+                var pizzaId = $(this).data('id'); // Получаем ID пиццы через data-атрибут
 
-                // Извлекаем данные о пицце из DOM
-                var name = pizzaItem.find('.pizza-name').text();
-                var ingredients = pizzaItem.find('p').first().text();  // Первая параграф с ингредиентами
-                var price = pizzaItem.find('p').last().text();  // Последний параграф с ценой
-                var imageSrc = pizzaItem.find('.pizza-image').attr('src');
+                // Отправляем запрос в контроллер
+                $.ajax({
+                    url: '/Pizza/GetDetails/' + pizzaId, // Путь к методу контроллера
+                    type: 'GET',
+                    success: function (data) {
+                        // Когда получаем данные, заполняем модальное окно
+                        $('#modalImage').attr('src', data.image);
+                        $('#modalName').text(data.name);
+                        $('#modalIngredients').text(data.ingredients);
+                        $('#modalPrice').text(data.price);
 
-                // Заполняем модальное окно
-                $('#modalImage').attr('src', imageSrc);
-                $('#modalName').text(name);
-                $('#modalIngredients').text(ingredients);
-                $('#modalPrice').text(price);
-
-                // Открываем модальное окно
-                $('#pizzaModal').modal('show');
+                        // Открываем модальное окно
+                        $('#pizzaModal').modal('show');
+                    },
+                    error: function () {
+                        alert("Ошибка при получении данных.");
+                    }
+                });
             });
         });
     </script>
