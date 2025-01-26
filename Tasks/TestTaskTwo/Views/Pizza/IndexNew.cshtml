@@ -89,27 +89,23 @@
     <script>
         $(document).ready(function () {
             $('.menu').on('click', '.pizza-name', function () {
-                const pizzaId = $(this).data('id');
+                // Находим родительский контейнер с данными о пицце
+                var pizzaItem = $(this).closest('.menu-item');
 
-                // Запрос данных о пицце через AJAX
-                $.ajax({
-                    url: '/Pizza/GetDetails', // Убедитесь, что в контроллере есть метод GetDetails
-                    type: 'GET',
-                    data: { id: pizzaId },
-                    success: function (data) {
-                        // Заполнение данных в модальном окне
-                        $('#modalImage').attr('src', data.image);
-                        $('#modalName').text(data.name);
-                        $('#modalIngredients').text(data.ingredients);
-                        $('#modalPrice').text(data.price);
+                // Извлекаем данные о пицце из DOM
+                var name = pizzaItem.find('.pizza-name').text();
+                var ingredients = pizzaItem.find('p').first().text();  // Первая параграф с ингредиентами
+                var price = pizzaItem.find('p').last().text();  // Последний параграф с ценой
+                var imageSrc = pizzaItem.find('.pizza-image').attr('src');
 
-                        // Показ модального окна
-                        $('#pizzaModal').modal('show');
-                    },
-                    error: function () {
-                        alert('Ошибка загрузки данных о пицце.');
-                    }
-                });
+                // Заполняем модальное окно
+                $('#modalImage').attr('src', imageSrc);
+                $('#modalName').text(name);
+                $('#modalIngredients').text(ingredients);
+                $('#modalPrice').text(price);
+
+                // Открываем модальное окно
+                $('#pizzaModal').modal('show');
             });
         });
     </script>
