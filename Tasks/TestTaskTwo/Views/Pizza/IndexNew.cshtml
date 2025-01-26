@@ -1,0 +1,46 @@
+﻿@using PizzaApp.Models
+@model List<PizzaApp.Models.PizzaModel>
+
+<!DOCTYPE html>
+<html lang="ru">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Доставка Пиццы и Роллов - Новая страница</title>
+    <link rel="stylesheet" href="~/css/site.css">
+</head>
+<body>
+    <header>
+        <h1>Доставка пиццы и роллов - Новая страница</h1>
+    </header>
+    <main>
+        <section class="menu">
+            <div class= "menu-flex">
+                @if (Model == null || !Model.Any())
+                {
+                < p > Пиццы не найдены.</ p >
+                }
+                else
+                {
+                    @foreach (var pizza in Model)
+                    {
+                    <div class="menu-item">
+                    <h5> @pizza.Id </h5 >
+                    <h3><a href = "/Pizza/Detail/@pizza.Id"> @pizza.Name </a></h3>
+                    <img class= "pizza-image" data-id="@pizza.Id" src = "@pizza.Image" alt = "@pizza.Name" width = "200" height = "200" />
+                    <p> @string.Join(", ", pizza.Ingredients)</p>
+                    <p> @pizza.Price руб.</p>
+                    </div>
+                    }
+                }
+            </div>
+            </section>
+            </main>
+            <footer>
+            <div class= "contacts">
+            <p>Телефон: +7 902 127 - 77 - 72 </p>
+            <p>Альтернативный номер: 4 - 04 - 77 </p>
+            </div>
+            </footer>
+            </body>
+            </html>

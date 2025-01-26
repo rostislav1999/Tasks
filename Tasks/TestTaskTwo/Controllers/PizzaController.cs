@@ -21,6 +21,13 @@ namespace PizzaApp.Controllers
             return View(pizzas);
         }
 
+        // Новый метод IndexNew
+        public IActionResult IndexNew()
+        {
+            var pizzas = _pizzaRepository.GetAllPizzas(); // Или используйте другие методы для фильтрации данных
+            return View(pizzas); // Отображение пицц на новой странице
+        }
+
         // Метод для отображения деталей пиццы по её ID
         public IActionResult Detail(int id)
         {

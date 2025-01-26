@@ -1,3 +1,6 @@
 Tasks/Task1/bin/
 Tasks/Task1/obj/
 Tasks/.vs/
+Tasks/TestTaskTwo/bin/Debug/net8.0/TestTaskTwo.dll
+Tasks/TestTaskTwo/bin/Debug/net8.0/TestTaskTwo.exe
+Tasks/TestTaskTwo/bin/Debug/net8.0/TestTaskTwo.pdb
