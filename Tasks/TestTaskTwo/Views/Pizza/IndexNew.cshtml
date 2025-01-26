@@ -87,31 +87,54 @@
         </div>
     </div>
     <script>
+            <script>
         $(document).ready(function () {
+            // Функция для отображения данных пиццы в модальном окне
+            function ShowPizza(pizza) {
+                // Обновляем данные модального окна
+                $('#modalImage').attr('src', pizza.image);
+                $('#modalName').text(pizza.name);
+                $('#modalIngredients').text(pizza.ingredients);
+                $('#modalPrice').text(pizza.price + " руб.");
+
+                // Открываем модальное окно
+                $('#pizzaModal').modal('show');
+            }
+
             // Обработчик клика на изображение пиццы
             $('.menu').on('click', '.pizza-image', function () {
                 var pizzaId = $(this).data('id'); // Получаем ID пиццы через data-атрибут
 
-                // Отправляем запрос в контроллер
+                // Отправляем запрос в контроллер для получения данных о пицце
                 $.ajax({
                     url: '/Pizza/GetDetails/' + pizzaId, // Путь к методу контроллера
                     type: 'GET',
                     success: function (data) {
-                        // Когда получаем данные, заполняем модальное окно
-                        $('#modalImage').attr('src', data.image);
-                        $('#modalName').text(data.name);
-                        $('#modalIngredients').text(data.ingredients);
-                        $('#modalPrice').text(data.price);
-
-                        // Открываем модальное окно
-                        $('#pizzaModal').modal('show');
+                        // Когда получаем данные, передаем их в функцию ShowPizza
+                        ShowPizza(data);
                     },
                     error: function () {
                         alert("Ошибка при получении данных.");
                     }
                 });
             });
+
+            // Обработчик клика на название пиццы
+            $('.menu').on('click', '.pizza-name', function () {
+                // Создаем объект пиццы, заполняя его данными из верстки
+                var pizza = {
+                    id: $(this).closest('.menu-item').find('.pizza-name').data('id'),
+                    name: $(this).text(),
+                    ingredients: $(this).closest('.menu-item').find('p').first().text(),
+                    price: $(this).closest('.menu-item').find('p').last().text().trim(),
+                    image: $(this).closest('.menu-item').find('.pizza-image').attr('src')
+                };
+
+                // Передаем объект пиццы в функцию ShowPizza
+                ShowPizza(pizza);
+            });
         });
+    </script>
     </script>
 </body>
 </html>
