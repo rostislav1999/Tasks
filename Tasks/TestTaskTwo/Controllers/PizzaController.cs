@@ -1,12 +1,14 @@
 using Microsoft.AspNetCore.Mvc;
 using PizzaApp.Repositories;
 using PizzaApp.Models;
+using NLog;
 
 namespace PizzaApp.Controllers
 {
     public class PizzaController : Controller
     {
         private readonly PizzaRepository _pizzaRepository;
+        private static readonly Logger Logger = LogManager.GetCurrentClassLogger(); // Логгер
 
         // Конструктор с внедрением зависимости PizzaRepository
         public PizzaController(PizzaRepository pizzaRepository)
@@ -17,37 +19,47 @@ namespace PizzaApp.Controllers
         // Метод Index
         public IActionResult Index()
         {
+            Logger.Info("Запрошена страница со списком пицц (Index)");
             var pizzas = _pizzaRepository.GetAllPizzas();
+            Logger.Info($"Найдено {pizzas.Count} пицц(ы)");
             return View(pizzas);
         }
 
         // Новый метод IndexNew
         public IActionResult IndexNew()
         {
-            var pizzas = _pizzaRepository.GetAllPizzas(); // Тот же код, что и в Index
+            Logger.Info("Запрошена страница IndexNew");
+            var pizzas = _pizzaRepository.GetAllPizzas();
+            Logger.Info($"Найдено {pizzas.Count} пицц(ы)");
             return View(pizzas);
         }
 
         // Метод Detail
         public IActionResult Detail(int id)
         {
+            Logger.Info($"Запрошена информация о пицце с ID: {id}");
             var pizza = _pizzaRepository.GetPizzaById(id);
             if (pizza == null)
             {
+                Logger.Warn($"Пицца с ID {id} не найдена.");
                 return NotFound("Пицца не найдена.");
             }
 
+            Logger.Info($"Пицца с ID {id} успешно найдена: {pizza.Name}");
             return View(pizza);
         }
 
         public IActionResult GetDetails(int id)
         {
+            Logger.Info($"Получение данных о пицце через AJAX с ID: {id}");
             var pizza = _pizzaRepository.GetPizzaById(id);
             if (pizza == null)
             {
+                Logger.Warn($"Пицца с ID {id} не найдена.");
                 return NotFound();
             }
 
+            Logger.Info($"Пицца с ID {id} успешно найдена: {pizza.Name}");
             return Json(new
             {
                 name = pizza.Name,
@@ -59,12 +71,15 @@ namespace PizzaApp.Controllers
 
         public IActionResult GetPizzaById(int id)
         {
-            var pizza = _pizzaRepository.FindById(id);  // Используйте метод FindById вместо GetPizzaById
+            Logger.Info($"Получение пиццы по ID: {id}");
+            var pizza = _pizzaRepository.FindById(id);
             if (pizza == null)
             {
+                Logger.Warn($"Пицца с ID {id} не найдена.");
                 return NotFound("Пицца не найдена.");
             }
 
+            Logger.Info($"Пицца с ID {id} успешно найдена: {pizza.Name}");
             return Json(new
             {
                 id = pizza.Id,
