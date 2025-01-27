@@ -2,6 +2,7 @@ using Microsoft.AspNetCore.Mvc;
 using PizzaApp.Repositories;
 using PizzaApp.Models;
 using NLog;
+using NLog.Config;
 
 namespace PizzaApp.Controllers
 {
