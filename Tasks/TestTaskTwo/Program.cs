@@ -21,7 +21,6 @@ try
 
     var app = builder.Build();
 
-    // Настройка обработки ошибок
     if (!app.Environment.IsDevelopment())
     {
         app.UseExceptionHandler("/Home/Error");
