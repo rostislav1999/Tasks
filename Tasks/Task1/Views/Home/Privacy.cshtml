@@ -15,9 +15,25 @@
         </div>
     </header>
     <main>
-        <section class="categories">
-            <p><strong>Роллы, закуски, салаты, десерты, напитки, горячие блюда, детское меню, сувениры.</strong></p>
-        </section>
+        <nav class="navbar navbar-expand-sm navbar-toggleable-sm navbar-light bg-white border-bottom box-shadow mb-3">
+            <div class="container-fluid">
+                <a class="navbar-brand" asp-area="" asp-controller="Home" asp-action="Index">Task1</a>
+                <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target=".navbar-collapse" aria-controls="navbarSupportedContent"
+                        aria-expanded="false" aria-label="Toggle navigation">
+                    <span class="navbar-toggler-icon"></span>
+                </button>
+                <div class="navbar-collapse collapse d-sm-inline-flex justify-content-between">
+                    <ul class="navbar-nav flex-grow-1">
+                        <li class="nav-item">
+                            <a class="nav-link text-dark" asp-area="" asp-controller="Home" asp-action="Index">Home</a>
+                        </li>
+                        <li class="nav-item">
+                            <a class="nav-link text-dark" asp-area="" asp-controller="Home" asp-action="Privacy">Privacy</a>
+                        </li>
+                    </ul>
+                </div>
+            </div>
+        </nav>
         <section class="menu">
             <div class="menu-flex">
             </div>
@@ -35,7 +51,7 @@
                 name: "Новогодняя",
                 image: "/img/novogodnyaya_2s.jpg",
                 composition: [
-                    "Соус 'Гавайский'",
+                    "Соус \"Гавайский\"",
                     "Сыр моцарелла",
                     "Куриная грудка",
                     "Мандарины консервированные",
@@ -49,11 +65,11 @@
             },
             {
                 name: "Capriccio",
-                image: "/img/novogodnyaya_2s.jpg",
+                image: "/img/capriccio_2s.jpg",
                 composition: [
                     "Сыр моцарелла",
-                    "Соус 'Барбекю'",
-                    "Соус 'Кальяри'",
+                    "Соус \"Барбекю\"",
+                    "Соус \"Кальяри\"",
                     "Пепперонни",
                     "Овощи гриль",
                     "Бекон",
@@ -68,10 +84,10 @@
             },
             {
                 name: "XXXL",
-                image: "/img/novogodnyaya_2s.jpg",
+                image: "/img/xxxl_2s.jpg",
                 composition: [
                     "Сыр моцарелла",
-                    "Соус '1000'",
+                    "Соус \"1000\"",
                     "Куриный рулет",
                     "Ветчина",
                     "Колбаски охотничьи",
@@ -89,9 +105,9 @@
             },
             {
                 name: "4 вкуса",
-                image: "/img/novogodnyaya_2s.jpg",
+                image: "/img/4_vkusa_2s.jpg",
                 composition: [
-                    "Соус '1000 стровов'",
+                    "Соус \"1000 стровов\"'",
                     "Сыр моцарелла",
                     "Рулет куриный",
                     "Ветчина",
@@ -108,9 +124,9 @@
             },
             {
                 name: "Амазонка",
-                image: "/img/novogodnyaya_2s.jpg",
+                image: "/img/amazonka_2s.jpg",
                 composition: [
-                    "Соус 'Томатный'",
+                    "Соус \"Томатный\"",
                     "Сыр моцарелла",
                     "Куриная грудка",
                     "Брокколи",
@@ -128,10 +144,10 @@
             },
             {
                 name: "БананZZа",
-                image: "/img/novogodnyaya_2s.jpg",
+                image: "/img/bananzza_2s.jpg",
                 composition: [
                     "Бананы",
-                    "Соус 'Гавайский'",
+                    "Соус \"Гавайский\"",
                     "Сыр моцарелла",
                     "Ананас",
                     "Шоколад молочный",
@@ -145,14 +161,14 @@
             },
             {
                 name: "Барбекю",
-                image: "/img/novogodnyaya_2s.jpg",
+                image: "/img/barbeq_2s.jpg",
                 composition: [
-                    "Соус 'Томатный'",
+                    "Соус \"Томатный\"",
                     "Сыр моцарелла",
                     "Ветчина",
                     "Бекон",
                     "Пепперони",
-                    "Соус 'Барбекю'",
+                    "Соус \"Барбекю\"",
                     "Томаты",
                     "Перец болгарский",
                     "Лук маринованный"
@@ -164,10 +180,10 @@
             },
             {
                 name: "Гавайская",
-                image: "/img/novogodnyaya_2s.jpg",
+                image: "/img/hawai_2s.jpg",
                 composition: [
                     "Ветчина",
-                    "Соус 'Гавайский'",
+                    "Соус \"Гавайский\"",
                     "Сыр моцарелла",
                     "Ананас",
                     "Перец болгарский"
@@ -179,9 +195,9 @@
             },
             {
                 name: "Гавайская Premium",
-                image: "/img/novogodnyaya_2s.jpg",
+                image: "/img/hawai_premium_2s.jpg",
                 composition: [
-                    "Соус 'Гавайский'",
+                    "Соус \"Гавайский\"",
                     "Сыр моцарелла",
                     "Ананас",
                     "Ветчина",
@@ -196,9 +212,9 @@
             },
         {
                 "name": "Греческая",
-                "image": "/img/novogodnyaya_2s.jpg",
+                "image": "/img/grek_2s.jpg",
                 "composition": [
-                    "Соус 'Кальяри'",
+                    "Соус \"Кальяри\"",
                     "Сыр моцарелла",
                     "Сливочный сыр",
                     "Брокколи",
@@ -213,9 +229,9 @@
             },
             {
                 "name": "Грибная",
-                "image": "/img/novogodnyaya_2s.jpg",
+                "image": "/img/gribnaya_2s.jpg",
                 "composition": [
-                    "Соус 'Грибной'",
+                    "Соус \"Грибной\"",
                     "Сыр моцарелла",
                     "Опята маринованные",
                     "Укроп",
@@ -229,9 +245,9 @@
             },
             {
                 "name": "Деревенская",
-                "image": "/img/novogodnyaya_2s.jpg",
+                "image": "/img/derevenskaya_2s.jpg",
                 "composition": [
-                    "Соус '1000 островов'",
+                    "Соус \"1000 островов\"",
                     "Сыр моцарелла",
                     "Ветчина",
                     "Сервелат",
@@ -247,9 +263,9 @@
             },
             {
                 "name": "Домашняя",
-                "image": "/img/novogodnyaya_2s.jpg",
+                "image": "/img/domashnyaya_2s.jpg",
                 "composition": [
-                    "Соус 'Томатный'",
+                    "Соус \"Томатный\"",
                     "Сыр моцарелла",
                     "Ветчина",
                     "Сервелат",
@@ -263,10 +279,10 @@
             },
             {
                 "name": "Дон Бекон",
-                "image": "/img/novogodnyaya_2s.jpg",
+                "image": "/img/don_bekon_2s.jpg",
                 "composition": [
                     "Бекон",
-                    "Соус 'Кальяри'",
+                    "Соус \"Кальяри\"",
                     "Сыр моцарелла",
                     "Томаты черри"
                 ],
@@ -277,13 +293,13 @@
             },
             {
                 "name": "Дьябло",
-                "image": "/img/novogodnyaya_2s.jpg",
+                "image": "/img/diabolo_2s.jpg",
                 "composition": [
-                    "Соус 'Томатный'",
+                    "Соус \"Томатный\"",
                     "Сыр моцарелла",
                     "Ветчина",
                     "Пеппирони",
-                    "Соус 'Кимчи'",
+                    "Соус \"Кимчи\"",
                     "Халапеньо",
                     "Томаты"
                 ],
@@ -296,12 +312,12 @@
                 "name": "Кальяри",
                 "image": "/img/novogodnyaya_2s.jpg",
                 "composition": [
-                    "Соус 'Кальяри'",
+                    "Соус \"Кальяри\"",
                     "Креветки тигровые",
                     "Куриная грудка",
                     "Сыр моцарелла",
                     "Ананас",
-                    "Соус 'Унаги'",
+                    "Соус \"Унаги\"",
                     "Кунжут"
                 ],
                 "sizes": ["30 см", "40 см", "60 см"],
@@ -311,13 +327,13 @@
             },
             {
                 "name": "Колизей",
-                "image": "/img/novogodnyaya_2s.jpg",
+                "image": "/img/kolizey_2s.jpg",
                 "composition": [
-                    "Соус 'Горчичный'",
+                    "Соус \"Горчичный\"",
                     "Сыр моцарелла",
                     "Куринный рулет",
                     "Колбаски охотничьи",
-                    "Соус 'Кисло-сладкий'",
+                    "Соус \"Кисло-сладкий\"",
                     "Томаты свежие",
                     "Лук маринованный"
                 ],
@@ -328,9 +344,9 @@
             },
             {
                 "name": "Королевская",
-                "image": "/img/novogodnyaya_2s.jpg",
+                "image": "/img/korolevskaya_2s.jpg",
                 "composition": [
-                    "Соус 'Кальяри'",
+                    "Соус \"Кальяри\"",
                     "Сыр моцарелла",
                     "Бекон",
                     "Креветки тигровые",
@@ -344,9 +360,9 @@
             },
             {
                 "name": "Крестьянская",
-                "image": "/img/novogodnyaya_2s.jpg",
+                "image": "/img/krestyanskaya_2s.jpg",
                 "composition": [
-                    "Соус '1000 островов'",
+                    "Соус \"1000 островов\"",
                     "Сыр моцарелла",
                     "Бекон",
                     "Укроп",
@@ -361,9 +377,9 @@
             },
                 {
             "name": "Маргарита",
-            "image": "/img/novogodnyaya_2s.jpg",
+            "image": "/img/margarita_2s.jpg",
             "composition": [
-                "Соус 'Томатный'",
+                "Соус \"Томатный\"",
                 "Сыр моцарелла",
                 "Сливочный сыр",
                 "Томаты черри"
@@ -375,9 +391,9 @@
         },
         {
             "name": "Морская",
-            "image": "/img/novogodnyaya_2s.jpg",
+            "image": "/img/morskaya_2s.jpg",
             "composition": [
-                "Соус 'Кальяри'",
+                "Соус \"Кальяри\"",
                 "Сыр моцарелла",
                 "Кальмар",
                 "Креветки тигровые",
@@ -395,9 +411,9 @@
         },
         {
             "name": "Мясная сборная",
-            "image": "/img/novogodnyaya_2s.jpg",
+            "image": "/img/myasnaya_sbornaya_2s.jpg",
             "composition": [
-                "Соус 'Барбекю'",
+                "Соус \"Барбекю\"",
                 "Сыр моцарелла",
                 "Куриный рулет",
                 "Ветчина",
@@ -415,10 +431,10 @@
         },
         {
             "name": "Остров пепперони",
-            "image": "/img/novogodnyaya_2s.jpg",
+            "image": "/img/ostrov_pepperoni_2s.jpg",
             "composition": [
                 "Сыр моцарелла",
-                "Соус '1000 островов'",
+                "Соус \"1000 островов\"",
                 "Пепперони",
                 "Томаты свежие"
             ],
@@ -429,9 +445,9 @@
         },
         {
             "name": "Охотничья",
-            "image": "/img/novogodnyaya_2s.jpg",
+            "image": "/img/ohotnichya_2s.jpg",
             "composition": [
-                "Соус '1000 островов'",
+                "Соус \"1000 островов\"",
                 "Сыр моцарелла",
                 "Сервелат",
                 "Бекон",
@@ -449,9 +465,9 @@
         },
         {
             "name": "Пепперони",
-            "image": "/img/novogodnyaya_2s.jpg",
+            "image": "/img/peperoni_2s.jpg",
             "composition": [
-                "Соус 'Томатный'",
+                "Соус \"Томатный\"",
                 "Сыр моцарелла",
                 "Пепперони"
             ],
@@ -462,9 +478,9 @@
         },
         {
             "name": "Пикантная",
-            "image": "/img/novogodnyaya_2s.jpg",
+            "image": "/img/pikantnaya_2s.jpg",
             "composition": [
-                "Соус 'Кальяри'",
+                "Соус \"Кальяри\"",
                 "Ветчина",
                 "Сливочный сыр",
                 "Сыр пармезан",
@@ -478,9 +494,9 @@
         },
         {
             "name": "Поноккио",
-            "image": "/img/novogodnyaya_2s.jpg",
+            "image": "/img/pinokio_2s.jpg",
             "composition": [
-                "Соус 'Гавайский'",
+                "Соус \"Гавайский\"",
                 "Куриный рулет",
                 "Сыр моцарелла",
                 "Кукуруза"
@@ -492,15 +508,15 @@
         },
         {
             "name": "Пицца-Cezer",
-            "image": "/img/novogodnyaya_2s.jpg",
+            "image": "/img/cezar_2s.jpg",
             "composition": [
                 "Ветчина",
                 "Куриная грудка",
-                "Соус 'Кальяри'",
+                "Соус \"Кальяри\"",
                 "Сыр моцарелла",
                 "Салат айсберг",
                 "Сыр пармезан",
-                "Соус 'Спайси'"
+                "Соус \"Спайси\""
             ],
             "sizes": ["30 см", "40 см", "60 см"],
             "crust": "Традиционное Толстое",
@@ -510,13 +526,13 @@
 
             {
                 "name": "Пицца-бургер",
-                "image": "/img/novogodnyaya_2s.jpg",
+                "image": "/img/burger_2s.jpg",
                 "composition": [
-                    "Соус 'Томатный'",
+                    "Соус \"Томатный\"",
                     "Сыр моцарелла",
                     "Куриный рулет",
                     "Ветчина",
-                    "Соус 'Бургер'",
+                    "Соус \"Бургер\"",
                     "Сервелат",
                     "Кунжут",
                     "Перец болгарский"
@@ -530,7 +546,7 @@
                 "name": "Сардиния",
                 "image": "/img/novogodnyaya_2s.jpg",
                 "composition": [
-                    "Соус 'Кальяри'",
+                    "Соус \"Кальяри\"",
                     "Сыр моцарелла",
                     "Брокколи",
                     "Сливочный сыр",
@@ -544,9 +560,9 @@
             },
             {
                 "name": "Славянская",
-                "image": "/img/novogodnyaya_2s.jpg",
+                "image": "/img/slavyanskaya_2s.jpg",
                 "composition": [
-                    "Соус '1000 островов'",
+                    "Соус \"1000 островов\"",
                     "Сыр моцарелла",
                     "Картофельные дольки",
                     "Бекон",
@@ -565,7 +581,7 @@
                 "name": "Сладкая Италия",
                 "image": "/img/novogodnyaya_2s.jpg",
                 "composition": [
-                    "Соус 'Сливочный'",
+                    "Соус \"Сливочный\"",
                     "Груша консервированная",
                     "Сыр моцарелла",
                     "Сыр с голубой плесенью",
@@ -579,14 +595,14 @@
             },
             {
                 "name": "Сливочно-острая",
-                "image": "/img/novogodnyaya_2s.jpg",
+                "image": "/img/slivochno_ostraya_2s.jpg",
                 "composition": [
-                    "Соус '1000 островов'",
+                    "Соус \"1000 островов\"",
                     "Сыр моцарелла",
                     "Сервелат",
                     "Бекон",
                     "Сливочный сыр",
-                    "Соус 'Кимчи'",
+                    "Соус \"Кимчи\"",
                     "Халапеньо",
                     "Томаты"
                 ],
@@ -597,9 +613,9 @@
             },
             {
                 "name": "Солянка",
-                "image": "/img/novogodnyaya_2s.jpg",
+                "image": "/img/solanka_2s.jpg",
                 "composition": [
-                    "Соус 'Барбекю'",
+                    "Соус \"Барбекю\"",
                     "Сыр моцарелла",
                     "Колбаски охотничьи",
                     "Бекон",
@@ -618,11 +634,11 @@
             },
             {
                 "name": "Сырная",
-                "image": "/img/novogodnyaya_2s.jpg",
+                "image": "/img/cheese_2s.jpg",
                 "composition": [
                     "Сыр моцарелла",
                     "Сливочный сыр",
-                    "Соус 'Кальяри'",
+                    "Соус \"Кальяри\"",
                     "Сыр фетаки",
                     "Сыр с голубой плесенью",
                     "Сыр пармезан"
@@ -634,9 +650,9 @@
             },
             {
                 "name": "Татарская",
-                "image": "/img/novogodnyaya_2s.jpg",
+                "image": "/img/tatarskaya_2s.jpg",
                 "composition": [
-                    "Соус 'Томатный'",
+                    "Соус \"Томатный\"",
                     "Куриный рулет",
                     "Сыр моцарелла",
                     "Конно-говяжья колбаса",
@@ -652,9 +668,9 @@
             },
             {
                 "name": "Фиеста",
-                "image": "/img/novogodnyaya_2s.jpg",
+                "image": "/img/fiesta_2s.jpg",
                 "composition": [
-                    "Соус '1000 островов'",
+                    "Соус \"1000 островов\"",
                     "Сыр моцарелла",
                     "Куриный рулет",
                     "Колбаски охотничьи",
@@ -670,9 +686,9 @@
             },
                 {
             "name": "Филадельфия",
-            "image": "/img/novogodnyaya_2s.jpg",
+            "image": "/img/filadelf_2s.jpg",
             "composition": [
-                "Соус 'Кальяри'",
+                "Соус \"Кальяри\"",
                 "Сыр моцарелла",
                 "Лосось",
                 "Сливочный сыр",
@@ -685,14 +701,14 @@
         },
         {
             "name": "Цезарь с лососем",
-            "image": "/img/novogodnyaya_2s.jpg",
+            "image": "/img/cezar_s_lososem_2s.jpg",
             "composition": [
                 "Сыр моцарелла",
-                "Соус 'Кальяри'",
+                "Соус \"Кальяри\"",
                 "Свежие томаты",
                 "Лосось",
                 "Салат айсберг",
-                "Соус 'Спайси'",
+                "Соус \"Спайси\"",
                 "Сыр пармезан"
             ],
             "sizes": ["30 см", "40 см", "60 см"],
@@ -702,7 +718,7 @@
         }
         ];
 
-        // Функция для генерации верстки
+  
                 function generatePizzaMenu() {
                     const menuContainer = document.querySelector(".menu-flex");
 
@@ -713,9 +729,9 @@
                         pizzaDiv.innerHTML =
                             `<img src="${pizza.image}" alt="${pizza.name}" />
                             <h2>${pizza.name}</h2>
-                            <p>Состав: ${pizza.composition.join(", ")}</p>
+                            <p>${pizza.composition.join(", ")}</p>
                             <p>Размеры: ${pizza.sizes.join(", ")}</p>
-                            <p>Корочка: ${pizza.crust}</p>
+                            <p>${pizza.crust}</p>
                             <p class="price">${pizza.price} Р ${pizza.weight}</p>
                         `;
 
@@ -723,7 +739,7 @@
                     });
                 }
 
-                // Вызов функции при загрузке страницы
+                
                 generatePizzaMenu();
     </script>
 </body>
