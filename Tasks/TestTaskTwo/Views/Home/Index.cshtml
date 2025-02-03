@@ -1,0 +1,75 @@
+﻿@using PizzaApp.Models
+@model List<PizzaApp.Models.PizzaModel>
+
+<!DOCTYPE html>
+<html lang="ru">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Доставка Пиццы и Роллов</title>
+    <link rel="stylesheet" href="~/css/site.css">
+</head>
+<body>
+    <header>
+        <h1>Доставка пиццы и роллов</h1>
+        <div class="working-hours">
+            <p>Понедельник – Пятница: с 10:00 до 22:00</p>
+            <p>Суббота: с 10:00 до 22:30</p>
+        </div>
+    </header>
+    <main>
+        <nav class="navbar navbar-expand-sm navbar-toggleable-sm navbar-light bg-white border-bottom box-shadow mb-3">
+            <div class="container-fluid">
+                <a class="navbar-brand" asp-area="" asp-controller="Home" asp-action="Index">Task1</a>
+                <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target=".navbar-collapse" aria-controls="navbarSupportedContent"
+                        aria-expanded="false" aria-label="Toggle navigation">
+                    <span class="navbar-toggler-icon"></span>
+                </button>
+                <div class="navbar-collapse collapse d-sm-inline-flex justify-content-between">
+                    <ul class="navbar-nav flex-grow-1">
+                        <li class="nav-item">
+                            <a class="nav-link text-dark" asp-area="" asp-controller="Home" asp-action="Index">Home</a>
+                        </li>
+                        <li class="nav-item">
+                            <a class="nav-link text-dark" asp-area="" asp-controller="Home" asp-action="Privacy">Privacy</a>
+                        </li>
+                    </ul>
+                </div>
+            </div>
+        </nav>
+        <section class="menu">
+            <div class="menu-flex">
+    @if (Model == null || !Model.Any())
+    {
+    <p>Пиццы не найдены.</p>
+    }
+    else
+    {
+        @foreach (var pizza in Model)  
+        {
+         <div class="menu-item">
+                <h3>@pizza.Name</h3> 
+                <img src="@pizza.Image" alt="@pizza.Name" width="200" height="200" /> 
+                <p> @string.Join(", ", pizza.Composition)</p>
+              <div style="display: flex;">
+                <p style="margin-right: 10px;">Размеры:</p><p> @string.Join(", ", pizza.Sizes)</p>
+               </div>
+                <p> @pizza.Crust</p>  
+                <p> @pizza.Price руб.</p>  
+                <p> @pizza.Weight</p> 
+						</div>
+        }
+    
+    }
+                </div>
+            
+        </section>
+    </main>
+    <footer>
+        <div class="contacts">
+            <p>Телефон: +7 902 127-77-72</p>
+            <p>Альтернативный номер: 4-04-77</p>
+        </div>
+    </footer>
+</body>
+</html>
