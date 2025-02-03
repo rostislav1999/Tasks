@@ -2,93 +2,139 @@ using Microsoft.AspNetCore.Mvc;
 using PizzaApp.Repositories;
 using PizzaApp.Models;
 using NLog;
-using NLog.Config;
+using System.Threading.Tasks;
 
 namespace PizzaApp.Controllers
 {
     public class PizzaController : Controller
     {
         private readonly PizzaRepository _pizzaRepository;
-        private static readonly Logger Logger = LogManager.GetCurrentClassLogger(); // Логгер
+        private static readonly Logger Logger = LogManager.GetCurrentClassLogger();
 
-        // Конструктор с внедрением зависимости PizzaRepository
         public PizzaController(PizzaRepository pizzaRepository)
         {
             _pizzaRepository = pizzaRepository ?? throw new ArgumentNullException(nameof(pizzaRepository));
         }
 
-        // Метод Index
-        public IActionResult Index()
+        // GET: Pizza
+        public async Task<IActionResult> Index()
         {
-            Logger.Info("Запрошена страница со списком пицц (Index)");
-            var pizzas = _pizzaRepository.GetAllPizzas();
-            Logger.Info($"Найдено {pizzas.Count} пицц(ы)");
-            return View(pizzas);
-        }
-
-        // Новый метод IndexNew
-        public IActionResult IndexNew()
-        {
-            Logger.Info("Запрошена страница IndexNew");
-            var pizzas = _pizzaRepository.GetAllPizzas();
-            Logger.Info($"Найдено {pizzas.Count} пицц(ы)");
-            return View(pizzas);
-        }
-
-        // Метод Detail
-        public IActionResult Detail(int id)
-        {
-            Logger.Info($"Запрошена информация о пицце с ID: {id}");
-            var pizza = _pizzaRepository.GetPizzaById(id);
-            if (pizza == null)
+            try
             {
-                Logger.Warn($"Пицца с ID {id} не найдена.");
-                return NotFound("Пицца не найдена.");
+                Logger.Info("Запрошена страница со списком пицц (Index)");
+                var pizzas = await _pizzaRepository.GetAllPizzasAsync();
+                Logger.Info($"Успешно получено {pizzas.Count} пицц");
+                return View(pizzas);
             }
-
-            Logger.Info($"Пицца с ID {id} успешно найдена: {pizza.Name}");
-            return View(pizza);
+            catch (Exception ex)
+            {
+                Logger.Error(ex, "Ошибка при получении списка пицц");
+                return StatusCode(500, "Внутренняя ошибка сервера");
+            }
         }
 
-        public IActionResult GetDetails(int id)
+        // GET: Pizza/IndexNew
+        public async Task<IActionResult> IndexNew()
         {
-            Logger.Info($"Получение данных о пицце через AJAX с ID: {id}");
-            var pizza = _pizzaRepository.GetPizzaById(id);
-            if (pizza == null)
+            try
             {
-                Logger.Warn($"Пицца с ID {id} не найдена.");
-                return NotFound();
+                Logger.Info("Запрошена страница IndexNew");
+                var pizzas = await _pizzaRepository.GetAllPizzasAsync();
+                Logger.Info($"Успешно получено {pizzas.Count} пицц для IndexNew");
+                return View(pizzas);
             }
-
-            Logger.Info($"Пицца с ID {id} успешно найдена: {pizza.Name}");
-            return Json(new
+            catch (Exception ex)
             {
-                name = pizza.Name,
-                ingredients = pizza.Ingredients,
-                price = pizza.Price,
-                image = Url.Content($"~/{pizza.Image}")
-            });
+                Logger.Error(ex, "Ошибка в методе IndexNew");
+                return StatusCode(500, "Внутренняя ошибка сервера");
+            }
         }
 
-        public IActionResult GetPizzaById(int id)
+        // GET: Pizza/Detail/5
+        public async Task<IActionResult> Detail(int id)
         {
-            Logger.Info($"Получение пиццы по ID: {id}");
-            var pizza = _pizzaRepository.FindById(id);
-            if (pizza == null)
+            try
             {
-                Logger.Warn($"Пицца с ID {id} не найдена.");
-                return NotFound("Пицца не найдена.");
-            }
+                Logger.Info($"Запрос деталей пиццы с ID: {id}");
+                var pizza = await _pizzaRepository.GetPizzaByIdAsync(id);
 
-            Logger.Info($"Пицца с ID {id} успешно найдена: {pizza.Name}");
-            return Json(new
+                if (pizza == null)
+                {
+                    Logger.Warn($"Пицца с ID {id} не найдена");
+                    return NotFound("Пицца не найдена");
+                }
+
+                Logger.Info($"Успешно найдена пицца: {pizza.Name} (ID: {pizza.Id})");
+                return View(pizza);
+            }
+            catch (Exception ex)
             {
-                id = pizza.Id,
-                name = pizza.Name,
-                ingredients = pizza.Ingredients,
-                price = pizza.Price,
-                image = Url.Content($"~/{pizza.Image}")
-            });
+                Logger.Error(ex, $"Ошибка при получении пиццы с ID: {id}");
+                return StatusCode(500, "Внутренняя ошибка сервера");
+            }
+        }
+
+        // GET: Pizza/GetDetails/5
+        [HttpGet]
+        public async Task<IActionResult> GetDetails(int id)
+        {
+            try
+            {
+                Logger.Info($"AJAX запрос деталей пиццы с ID: {id}");
+                var pizza = await _pizzaRepository.GetPizzaByIdAsync(id);
+
+                if (pizza == null)
+                {
+                    Logger.Warn($"Пицца с ID {id} не найдена (AJAX)");
+                    return NotFound();
+                }
+
+                Logger.Info($"Успешно обработан AJAX запрос для пиццы: {pizza.Name}");
+                return Json(new
+                {
+                    name = pizza.Name,
+                    ingredients = pizza.Ingredients,
+                    price = pizza.Price.ToString("C2"),
+                    image = Url.Content($"~/img/{System.IO.Path.GetFileName(pizza.Image)}")
+                });
+            }
+            catch (Exception ex)
+            {
+                Logger.Error(ex, $"Ошибка при обработке AJAX запроса для ID: {id}");
+                return StatusCode(500, new { error = "Internal server error" });
+            }
+        }
+
+        // GET: Pizza/GetPizzaById/5
+        [HttpGet]
+        public async Task<IActionResult> GetPizzaById(int id)
+        {
+            try
+            {
+                Logger.Info($"Запрос пиццы по ID: {id}");
+                var pizza = await _pizzaRepository.FindByIdAsync(id);
+
+                if (pizza == null)
+                {
+                    Logger.Warn($"Пицца с ID {id} не найдена");
+                    return NotFound("Пицца не найдена");
+                }
+
+                Logger.Info($"Успешно возвращена пицца: {pizza.Name}");
+                return Json(new
+                {
+                    id = pizza.Id,
+                    name = pizza.Name,
+                    ingredients = pizza.Ingredients,
+                    price = pizza.Price.ToString("C2"),
+                    image = Url.Content($"~/img/{System.IO.Path.GetFileName(pizza.Image)}")
+                });
+            }
+            catch (Exception ex)
+            {
+                Logger.Error(ex, $"Ошибка при получении пиццы по ID: {id}");
+                return StatusCode(500, new { error = "Internal server error" });
+            }
         }
     }
 }
